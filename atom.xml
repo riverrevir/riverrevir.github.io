@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
- <title>riverrevir's tech blog</title>
- <link href="https://riverrevir.github.io//atom.xml" rel="self"/>
- <link href="https://riverrevir.github.io//"/>
- <updated>2022-02-19T12:57:08+01:00</updated>
+ <title>river.dev</title>
+ <link href="https://riverrevir.github.io/atom.xml" rel="self"/>
+ <link href="https://riverrevir.github.io/"/>
+ <updated>2022-02-19T13:56:41+01:00</updated>
  <id>https://riverrevir.github.io</id>
  <author>
    <name>riverrevir</name>
@@ -14,7 +14,7 @@
  
  <entry>
    <title>Staticman comments on a Jekyll site</title>
-   <link href="https://riverrevir.github.io//2022/02/19/test"/>
+   <link href="https://riverrevir.github.io/2022/02/19/test"/>
    <updated>2022-02-19T00:00:00+01:00</updated>
    <id>https://riverrevir.github.io/2022/02/19/test</id>
    <content type="html">&lt;p&gt;testLorem ipsum dolor amet tousled viral art party blue bottle single-origin coffee cardigan, selvage man braid helvetica. Banh mi taxidermy meditation microdosing. Selvage cornhole YOLO, small batch vexillologist raclette VHS prism sustainable 8-bit ugh semiotics letterpress disrupt pop-up. Celiac shabby chic ugh, jianbing whatever kitsch tattooed edison bulb kogi irony etsy.&lt;/p&gt;

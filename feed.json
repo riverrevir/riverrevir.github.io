@@ -3,7 +3,7 @@
     "title": "river.dev",
     "home_page_url": "https://riverrevir.github.io/",
     "feed_url": "https://riverrevir.github.io/feed.json",
-    "description": "just a minimalist, personal blog",
+    "description": null,
     "icon": "https://riverrevir.github.io/apple-touch-icon.png",
     "favicon": "https://riverrevir.github.io/favicon.ico",
     "expired": false,

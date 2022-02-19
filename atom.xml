@@ -4,13 +4,24 @@
  <title>riverrevir's tech blog</title>
  <link href="https://riverrevir.github.io//atom.xml" rel="self"/>
  <link href="https://riverrevir.github.io//"/>
- <updated>2022-02-19T12:01:06+01:00</updated>
+ <updated>2022-02-19T12:07:17+01:00</updated>
  <id>https://riverrevir.github.io</id>
  <author>
    <name>riverrevir</name>
    <email>dgdev@naver.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Staticman comments on a Jekyll site</title>
+   <link href="https://riverrevir.github.io//2022/02/19/test"/>
+   <updated>2022-02-19T00:00:00+01:00</updated>
+   <id>https://riverrevir.github.io/2022/02/19/test</id>
+   <content type="html">&lt;p&gt;testLorem ipsum dolor amet tousled viral art party blue bottle single-origin coffee cardigan, selvage man braid helvetica. Banh mi taxidermy meditation microdosing. Selvage cornhole YOLO, small batch vexillologist raclette VHS prism sustainable 8-bit ugh semiotics letterpress disrupt pop-up. Celiac shabby chic ugh, jianbing whatever kitsch tattooed edison bulb kogi irony etsy.&lt;/p&gt;
+
+&lt;p&gt;Franzen polaroid hammock iceland blue bottle woke disrupt tilde kale chips raw denim ramps vaporware before they sold out irony. Narwhal vaporware offal shaman celiac kinfolk activated charcoal salvia lomo irony readymade normcore. Yr activated charcoal kombucha, man braid whatever biodiesel hella crucifix adaptogen bicycle rights small batch skateboard mixtape. Hot chicken sustainable green juice 90’s. Ennui kickstarter hella pug, meggings man bun shaman messenger bag. Chambray adaptogen kombucha pug affogato, kogi green juice distillery ugh banh mi.&lt;/p&gt;
+</content>
+ </entry>
  
 
 </feed>

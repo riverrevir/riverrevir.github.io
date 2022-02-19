@@ -1,3 +1,12 @@
 [
   
+    {
+      "title"    : "Staticman comments on a Jekyll site",
+      "description" : "Generating comments on static sites with Staticman",
+      "category" : "",
+      "tags"     : "jekyll, coding",
+      "url"      : "//2022/02/19/test",
+      "date"     : "2022-02-19 00:00:00 +0100"
+    } 
+  
 ]

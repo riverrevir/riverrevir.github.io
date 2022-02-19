@@ -1,0 +1,16 @@
+{
+  "requires": true,
+  "lockfileVersion": 1,
+  "dependencies": {
+    "fuzzysearch": {
+      "integrity": "sha1-3/yA9tawQiPyImqnndGUIxCW0Ag=",
+      "resolved": "https://registry.npmjs.org/fuzzysearch/-/fuzzysearch-1.0.3.tgz",
+      "version": "1.0.3"
+    },
+    "gem": "^2.4.3",
+    "jekyll": "^3.0.0-beta1",
+    "ruby": "^0.6.1",
+    "serve": "^13.0.2",
+    "simple-jekyll-search": "^1.9.2"
+  }
+}

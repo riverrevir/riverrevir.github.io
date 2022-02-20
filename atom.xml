@@ -4,7 +4,7 @@
  <title>river.dev</title>
  <link href="https://riverrevir.github.io/atom.xml" rel="self"/>
  <link href="https://riverrevir.github.io/"/>
- <updated>2022-02-20T08:18:48+01:00</updated>
+ <updated>2022-02-20T15:37:42+01:00</updated>
  <id>https://riverrevir.github.io</id>
  <author>
    <name>riverrevir</name>
@@ -13,15 +13,86 @@
 
  
  <entry>
-   <title>Staticman comments on a Jekyll site</title>
-   <link href="https://riverrevir.github.io/2022/02/19/test"/>
-   <updated>2022-02-19T00:00:00+01:00</updated>
-   <id>https://riverrevir.github.io/2022/02/19/test</id>
-   <content type="html">&lt;p&gt;testLorem ipsum dolor amet tousled viral art party blue bottle single-origin coffee cardigan, selvage man braid helvetica. Banh mi taxidermy meditation microdosing. Selvage cornhole YOLO, small batch vexillologist raclette VHS prism sustainable 8-bit ugh semiotics letterpress disrupt pop-up. Celiac shabby chic ugh, jianbing whatever kitsch tattooed edison bulb kogi irony etsy.&lt;/p&gt;
+   <title>Markdown 문법 정리</title>
+   <link href="https://riverrevir.github.io/2022/02/20/markdown"/>
+   <updated>2022-02-20T00:00:00+01:00</updated>
+   <id>https://riverrevir.github.io/2022/02/20/markdown</id>
+   <content type="html">&lt;p&gt;마크다운 언어로 블로그를 작성하다 보니 자주 사용하는 것들을 위주로 정리해보록 하겠다.&lt;/p&gt;
+&lt;h4&gt;줄 바꾸기&lt;/h4&gt;
+&lt;p&gt;행을 바꾸고 싶으면  &lt;strong&gt;스페이스 두번 입력후 엔터&lt;/strong&gt;  를 눌러준다.&lt;/p&gt;
 
-&lt;p&gt;Franzen polaroid hammock iceland blue bottle woke disrupt tilde kale chips raw denim ramps vaporware before they sold out irony. Narwhal vaporware offal shaman celiac kinfolk activated charcoal salvia lomo irony readymade normcore. Yr activated charcoal kombucha, man braid whatever biodiesel hella crucifix adaptogen bicycle rights small batch skateboard mixtape. Hot chicken sustainable green juice 90’s. Ennui kickstarter hella pug, meggings man bun shaman messenger bag. Chambray adaptogen kombucha pug affogato, kogi green juice distillery ugh banh mi.&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;과거의 줄입니다.  
+새로운 줄입니다.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;과거의 줄입니다.&lt;br /&gt;
+새로운 줄입니다.&lt;/p&gt;
 
-&lt;p&gt;여기서 클릭해주시면 됩니다.&lt;/p&gt;
+&lt;h4&gt;문단 나누기&lt;/h4&gt;
+&lt;p&gt;한 문단을 비워두고 작성한다.&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;1번 문단
+
+2번 문단
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;1번 문단&lt;/p&gt;
+
+&lt;p&gt;2번 문단&lt;/p&gt;
+
+&lt;h4&gt;header&lt;/h4&gt;
+&lt;p&gt;글의 제목의 크기를 쉽게 표현할 수 있다.&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# h1
+## h2
+### h3
+#### h4
+##### h5
+###### h6
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h1 id=&quot;h1&quot;&gt;h1&lt;/h1&gt;
+&lt;h2 id=&quot;h2&quot;&gt;h2&lt;/h2&gt;
+&lt;h3 id=&quot;h3&quot;&gt;h3&lt;/h3&gt;
+&lt;h4 id=&quot;h4&quot;&gt;h4&lt;/h4&gt;
+&lt;h5 id=&quot;h5&quot;&gt;h5&lt;/h5&gt;
+&lt;h6 id=&quot;h6&quot;&gt;h6&lt;/h6&gt;
+
+&lt;h4&gt;강조&lt;/h4&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;_강조1_
+__강조2__
+**강조**
+***강조***
+&amp;lt;u&amp;gt;밑줄&amp;lt;/u&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;강조1&lt;/em&gt;&lt;br /&gt;
+&lt;strong&gt;강조2&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;강조&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;&lt;em&gt;강조&lt;/em&gt;&lt;/strong&gt;&lt;br /&gt;
+&lt;u&gt;밑줄&lt;/u&gt;&lt;/p&gt;
+
+&lt;h4&gt;코드 블록&lt;/h4&gt;
+&lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;#include&lt;/span&gt;&lt;span class=&quot;cpf&quot;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;span class=&quot;cp&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4&gt;글씨 색&lt;/h4&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;span&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;style=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;color:red&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;글씨색 바꾸기&lt;span class=&quot;nt&quot;&gt;&amp;lt;/span&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;span style=&quot;color:red&quot;&gt;글씨색 바꾸기&lt;/span&gt;&lt;/p&gt;
+
+&lt;h4&gt;인라인&lt;/h4&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;글자를 `여기를` 강조 하고 싶을 때 사용한다.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;글자를 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;여기를&lt;/code&gt; 강조 하고 싶을 때 사용한다.&lt;/p&gt;
+
+&lt;h4&gt;인용문&lt;/h4&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt;인용문1
+&amp;gt;&amp;gt;인용문2
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;인용문1&lt;/p&gt;
+  &lt;blockquote&gt;
+    &lt;p&gt;인용문2&lt;/p&gt;
+  &lt;/blockquote&gt;
+&lt;/blockquote&gt;
 </content>
  </entry>
  

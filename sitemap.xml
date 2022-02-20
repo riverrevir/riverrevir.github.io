@@ -1,44 +1,32 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url>
-<loc>https://riverrevir.github.io/2022/02/20/markdown</loc>
-<lastmod>2022-02-20T00:00:00+01:00</lastmod>
-</url>
-<url>
-<loc>https://riverrevir.github.io/about/</loc>
-</url>
-<url>
-<loc>https://riverrevir.github.io/tag/typography/</loc>
-</url>
-<url>
-<loc>https://riverrevir.github.io/tag/security/</loc>
-</url>
-<url>
-<loc>https://riverrevir.github.io/tag/css/</loc>
-</url>
-<url>
-<loc>https://riverrevir.github.io/tag/markdown/</loc>
-</url>
-<url>
-<loc>https://riverrevir.github.io/tag/seo/</loc>
-</url>
-<url>
-<loc>https://riverrevir.github.io/tag/coding/</loc>
-</url>
-<url>
-<loc>https://riverrevir.github.io/tag/jekyll/</loc>
-</url>
-<url>
-<loc>https://riverrevir.github.io/</loc>
-</url>
-<url>
-<loc>https://riverrevir.github.io/tag/netlify/</loc>
-</url>
-<url>
-<loc>https://riverrevir.github.io/tag/wordpress/</loc>
-</url>
-<url>
-<loc>https://riverrevir.github.io/google3f88fe4090b3180e.html</loc>
-<lastmod>2022-02-20T16:32:51+01:00</lastmod>
-</url>
-</urlset>
+ ---
+    layout: null
+    sitemap:
+      exclude: 'yes'
+    ---
+    <?xml version="1.0" encoding="UTF-8"?>
+    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+      {% for post in site.posts %}
+        {% unless post.published == false %}
+        <url>
+          <loc>{{ site.url }}{{ post.url }}</loc>
+          {% if post.sitemap.lastmod %}
+            <lastmod>{{ post.sitemap.lastmod | date: "%Y-%m-%d" }}</lastmod>
+          {% elsif post.date %}
+            <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
+          {% else %}
+            <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+          {% endif %}
+          {% if post.sitemap.changefreq %}
+            <changefreq>{{ post.sitemap.changefreq }}</changefreq>
+          {% else %}
+            <changefreq>monthly</changefreq>
+          {% endif %}
+          {% if post.sitemap.priority %}
+            <priority>{{ post.sitemap.priority }}</priority>
+          {% else %}
+            <priority>0.5</priority>
+          {% endif %}
+        </url>
+        {% endunless %}
+      {% endfor %}
+    </urlset>

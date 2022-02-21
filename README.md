@@ -1,6 +1,7 @@
 ### Update
 
 - [x] utterances
+- [x] post css update
 
 ## Installation
 

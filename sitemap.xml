@@ -2,7 +2,7 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
     <url>
-    <url>  <loc>https://riverrevir.github.io/2022/02/23/boj-16234</loc> </url>
+      <loc>https://riverrevir.github.io/2022/02/23/boj-16234</loc>
       
         <lastmod>2022-02-23T00:00:00+01:00</lastmod>
       
@@ -18,7 +18,7 @@
     </url>
   
     <url>
-    <url>  <loc>https://riverrevir.github.io/2022/02/20/markdown</loc> </url>
+      <loc>https://riverrevir.github.io/2022/02/20/markdown</loc>
       
         <lastmod>2022-02-20T00:00:00+01:00</lastmod>
       

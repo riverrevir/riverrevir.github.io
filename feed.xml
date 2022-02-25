@@ -5,8 +5,8 @@
     <description></description>
     <link>https://riverrevir.github.io//</link>
     <atom:link href="https://riverrevir.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 25 Feb 2022 11:27:01 +0100</pubDate>
-    <lastBuildDate>Fri, 25 Feb 2022 11:27:01 +0100</lastBuildDate>
+    <pubDate>Fri, 25 Feb 2022 11:28:25 +0100</pubDate>
+    <lastBuildDate>Fri, 25 Feb 2022 11:28:25 +0100</lastBuildDate>
     <generator>Jekyll v4.2.1</generator>
     
       <item>
@@ -106,7 +106,7 @@
         <link>https://riverrevir.github.io//2022/02/23/boj-16234</link>
         <guid isPermaLink="true">https://riverrevir.github.io//2022/02/23/boj-16234</guid>
         
-        <category>boj</category>
+        <category>BOJ</category>
         
         
       </item>

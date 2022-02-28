@@ -4,6 +4,22 @@
         xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     
     <url>
+        <loc>https://riverrevir.github.io/2022/02/27/boj-16637.html</loc>
+        
+        <lastmod>2022-02-27T00:00:00+01:00</lastmod>
+        
+
+        
+        <changefreq>weekly</changefreq>
+        
+
+        
+        <priority>0.5</priority>
+        
+
+    </url>
+    
+    <url>
         <loc>https://riverrevir.github.io/2022/02/26/boj-17136.html</loc>
         
         <lastmod>2022-02-26T00:00:00+01:00</lastmod>

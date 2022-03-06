@@ -19,6 +19,15 @@
     } ,
   
     {
+      "title"    : "백준 9934번 - 완전 이진 트리",
+      "description" : "",
+      "category" : "",
+      "tags"     : "BOJ",
+      "url"      : "//2022/03/03/boj-9934",
+      "date"     : "2022-03-03 00:00:00 +0100"
+    } ,
+  
+    {
       "title"    : "백준 2529번 - 부등호",
       "description" : "",
       "category" : "",

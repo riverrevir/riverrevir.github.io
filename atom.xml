@@ -4,7 +4,7 @@
  <title>river.dev</title>
  <link href="https://riverrevir.github.io//atom.xml" rel="self"/>
  <link href="https://riverrevir.github.io//"/>
- <updated>2022-03-06T20:43:19+01:00</updated>
+ <updated>2022-03-06T20:50:33+01:00</updated>
  <id>https://riverrevir.github.io</id>
  <author>
    <name>riverrevir</name>
@@ -28,6 +28,8 @@
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;플로이드 와샬을 사용할 때 두 점 사이의 거리가 1000m 이하인지만 판단해보자. 그렇다면 정점 (i,j)가 1인 경우만 고려하면 된다. i-&amp;gt;j가 다이렉트로 되어 있는 경우와 (i-&amp;gt;k-&amp;gt;j)인 경우 둘 중 하나만 1이라면 맥주를 마시며 이동할 수 있다.&lt;/p&gt;
+
+&lt;h4&gt;코드&lt;/h4&gt;
 
 &lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;#include&lt;/span&gt; &lt;span class=&quot;cpf&quot;&gt;&amp;lt;bits/stdc++.h&amp;gt;&lt;/span&gt;&lt;span class=&quot;cp&quot;&gt;
 &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;

@@ -10,6 +10,15 @@
     } ,
   
     {
+      "title"    : "자바스크립트에서의 변수",
+      "description" : "",
+      "category" : "",
+      "tags"     : "Javascript",
+      "url"      : "//2022/03/17/js-study1",
+      "date"     : "2022-03-17 00:00:00 +0100"
+    } ,
+  
+    {
       "title"    : "백준 9205번 - 맥주 마시면서 걸어가기",
       "description" : "",
       "category" : "",

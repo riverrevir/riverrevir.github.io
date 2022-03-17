@@ -5,8 +5,8 @@
     <description></description>
     <link>https://riverrevir.github.io//</link>
     <atom:link href="https://riverrevir.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 16 Mar 2022 20:24:28 +0100</pubDate>
-    <lastBuildDate>Wed, 16 Mar 2022 20:24:28 +0100</lastBuildDate>
+    <pubDate>Thu, 17 Mar 2022 10:17:33 +0100</pubDate>
+    <lastBuildDate>Thu, 17 Mar 2022 10:17:33 +0100</lastBuildDate>
     <generator>Jekyll v4.2.1</generator>
     
       <item>
@@ -87,6 +87,53 @@
         <guid isPermaLink="true">https://riverrevir.github.io//2022/03/17/js-study1</guid>
         
         <category>Javascript</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>플로이드 와샬(Floydwatershall) 알고리즘 추천 문제</title>
+        <description>&lt;h4&gt;플로이드 와샬이란&lt;/h4&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;모든 정점&lt;/code&gt; 에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;모든 정점&lt;/code&gt;으로의 최단 경로를 구하는 알고리즘이다. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;거져서 가는 정점들&lt;/code&gt;  기준으로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;다이나믹 프로그래밍&lt;/code&gt;을 기반으로 업데이트 한다. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;음수&lt;/code&gt;의 좌표에서도 사용이 가능하다.&lt;/p&gt;
+
+&lt;p&gt;원소 (i,j) &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;i로부터 j까지의 최단 경로&lt;/code&gt;를 저장&lt;/p&gt;
+
+&lt;div class=&quot;language-jsx highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;점화식&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;min&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;n을 거쳐서 가는 경로와 직접 가는 경로를 비교하며 거쳐갈 수 있는 정점들을 모두 비교하여 최단 경로를 업데이트한다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4&gt;추천문제&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/11404&quot;&gt;백준 11404번 - 플로이드&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/11403&quot;&gt;백준 11403번 - 경로 찾기&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/1613&quot;&gt;백준 1613번 - 역사&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/2458&quot;&gt;백준 2458번 - 키 순서&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/1389&quot;&gt;백준 1389번 - 케빈 베이컨의 6단계 법칙&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/1956&quot;&gt;백준 1956번 - 운동&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/13168&quot;&gt;백준 13168번 - 내일로 여행&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/1507&quot;&gt;백준 1507번 - 궁금한 민호&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/15723&quot;&gt;백준 15723번 - n단 논법&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://programmers.co.kr/learn/courses/30/lessons/49191&quot;&gt;프로그래머스 - 순위&lt;/a&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Mon, 07 Mar 2022 00:00:00 +0100</pubDate>
+        <link>https://riverrevir.github.io//2022/03/07/floydwatershall</link>
+        <guid isPermaLink="true">https://riverrevir.github.io//2022/03/07/floydwatershall</guid>
+        
+        <category>Algorithm</category>
         
         
       </item>

@@ -4,22 +4,6 @@
         xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     
     <url>
-        <loc>https://riverrevir.github.io/2022/03/17/js-study-1.html</loc>
-        
-        <lastmod>2022-03-17T00:00:00+01:00</lastmod>
-        
-
-        
-        <changefreq>weekly</changefreq>
-        
-
-        
-        <priority>0.5</priority>
-        
-
-    </url>
-    
-    <url>
         <loc>https://riverrevir.github.io/2022/03/17/js-study1.html</loc>
         
         <lastmod>2022-03-17T00:00:00+01:00</lastmod>

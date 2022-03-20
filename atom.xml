@@ -4,13 +4,67 @@
  <title>river.dev</title>
  <link href="https://riverrevir.github.io//atom.xml" rel="self"/>
  <link href="https://riverrevir.github.io//"/>
- <updated>2022-03-17T11:11:04+01:00</updated>
+ <updated>2022-03-20T08:30:39+01:00</updated>
  <id>https://riverrevir.github.io</id>
  <author>
    <name>riverrevir</name>
    <email>dgdev@naver.com</email>
  </author>
 
+ 
+ <entry>
+   <title>자바스크립트에서의 변수</title>
+   <link href="https://riverrevir.github.io//2022/03/19/js-study2"/>
+   <updated>2022-03-19T00:00:00+01:00</updated>
+   <id>https://riverrevir.github.io/2022/03/19/js_study2</id>
+   <content type="html">&lt;h4&gt;연산자&lt;/h4&gt;
+
+&lt;h6&gt;증가/감소&lt;/h6&gt;
+&lt;p&gt;전위 연산자 - 피연산자 값을 먼저 계산하고, 다음 연산을 수행한다.&lt;/p&gt;
+
+&lt;p&gt;후위 연산자 - 다른 연산을 수행하고, 피연산자의 값을 계산한다.&lt;/p&gt;
+
+&lt;p&gt;숫자 타입이 아닌 피연산자에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;+,-&lt;/code&gt; 를 사용하게 되면 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;숫자 타입&lt;/code&gt;으로 변환된다.&lt;/p&gt;
+
+&lt;h6&gt;문자열 연결&lt;/h6&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;+&lt;/code&gt; 연산자는 피연산자 중 하나 이상이 문자열이면 문자열 연결 연산자로 동작한다.&lt;/p&gt;
+
+&lt;h6&gt;비교 연산자&lt;/h6&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;==&lt;/code&gt;연산자는 자바스크립트 엔진에 의해 암묵적으로 타입을 일치시킨 후 같은 값인지 비교한다. 그러므로 자바스크립트에서는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;==&lt;/code&gt;연산자는 사용하지 않는 편이 좋다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;===&lt;/code&gt;연산자를 이용함으로써 타입도 같고 값도 같은 경우에만 참값을 반환한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;NaN&lt;/code&gt;은 Not a number(숫자가 아님)의 줄임말로 브라우저에서 설정 불가, 쓰기 불가로 사용되는 속성이다. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Number.isNaN()&lt;/code&gt; 또는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;isNaN()&lt;/code&gt;을 사용하여 판별할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;숫자로서 읽을 수 없음 (parseInt(“어쩌구”), Number(undefined))
+결과가 허수인 수학 계산식 (Math.sqrt(-1))
+피연산자가 NaN (7 ** NaN)
+정의할 수 없는 계산식 (0 * Infinity)
+문자열을 포함하면서 덧셈이 아닌 계산식 (“가” / 3)&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;isNaN&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// false&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;isNaN&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;abc&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// true&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;isNaN&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// false&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h6&gt;isNaN() vs Number.isNaN()&lt;/h6&gt;
+&lt;p&gt;NaN을 판별하는데 쓰이지만 차이가 있다.&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;isNaN&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;hello world&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// true&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;Number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;isNaN&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;hello world&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// false&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;isNaN()은 인자로 들어온 값이 NaN 이거나 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;숫자&lt;/code&gt;로 변환했을 때 NaN이면 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;true&lt;/code&gt;를 리턴한다.&lt;/p&gt;
+
+&lt;p&gt;Number.isNaN()은 인자로 들어온 값이 NaN이어야만 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;true&lt;/code&gt;를 리턴한다.&lt;/p&gt;
+
+&lt;h6&gt;typeof&lt;/h6&gt;
+
+&lt;p&gt;typeof null은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;object&lt;/code&gt;로 반환되기에 주의해야 한다. null 타입을 확인하기 위해서는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;===&lt;/code&gt;연산자를 이용하자.&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>자바스크립트에서의 변수</title>

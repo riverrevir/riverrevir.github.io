@@ -5,8 +5,8 @@
     <description></description>
     <link>https://riverrevir.github.io//</link>
     <atom:link href="https://riverrevir.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 20 Mar 2022 09:03:03 +0100</pubDate>
-    <lastBuildDate>Sun, 20 Mar 2022 09:03:03 +0100</lastBuildDate>
+    <pubDate>Sun, 20 Mar 2022 09:11:11 +0100</pubDate>
+    <lastBuildDate>Sun, 20 Mar 2022 09:11:11 +0100</lastBuildDate>
     <generator>Jekyll v4.2.1</generator>
     
       <item>
@@ -31,12 +31,13 @@
 &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;===&lt;/code&gt;연산자를 이용함으로써 타입도 같고 값도 같은 경우에만 참값을 반환한다.&lt;/p&gt;
 
 &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;NaN&lt;/code&gt;은 Not a number(숫자가 아님)의 줄임말로 브라우저에서 설정 불가, 쓰기 불가로 사용되는 속성이다. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Number.isNaN()&lt;/code&gt; 또는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;isNaN()&lt;/code&gt;을 사용하여 판별할 수 있다.&lt;/p&gt;
-
-&lt;p&gt;숫자로서 읽을 수 없음 (parseInt(“어쩌구”), Number(undefined))
-결과가 허수인 수학 계산식 (Math.sqrt(-1))
-피연산자가 NaN (7 ** NaN)
-정의할 수 없는 계산식 (0 * Infinity)
-문자열을 포함하면서 덧셈이 아닌 계산식 (“가” / 3)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;숫자로서 읽을 수 없음 (parseInt(&quot;어쩌구&quot;), Number(undefined))&lt;/li&gt;
+&lt;li&gt;결과가 허수인 수학 계산식 (Math.sqrt(-1))&lt;/li&gt;
+&lt;li&gt;피연산자가 NaN (7 ** NaN)&lt;/li&gt;
+&lt;li&gt;정의할 수 없는 계산식 (0 * Infinity)&lt;/li&gt;
+&lt;li&gt;문자열을 포함하면서 덧셈이 아닌 계산식 (&quot;가&quot; / 3)&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;isNaN&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// false&lt;/span&gt;
 &lt;span class=&quot;nb&quot;&gt;isNaN&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;abc&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// true&lt;/span&gt;

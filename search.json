@@ -1,6 +1,15 @@
 [
   
     {
+      "title"    : "자바스크립트에서의 타입 변환과 단축 평가",
+      "description" : "",
+      "category" : "",
+      "tags"     : "Javascript",
+      "url"      : "//2022/03/20/js-study3",
+      "date"     : "2022-03-20 00:00:00 +0100"
+    } ,
+  
+    {
       "title"    : "자바스크립트에서의 연산자",
       "description" : "",
       "category" : "",

@@ -5,9 +5,81 @@
     <description></description>
     <link>https://riverrevir.github.io//</link>
     <atom:link href="https://riverrevir.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 20 Mar 2022 09:11:11 +0100</pubDate>
-    <lastBuildDate>Sun, 20 Mar 2022 09:11:11 +0100</lastBuildDate>
+    <pubDate>Sun, 20 Mar 2022 11:51:38 +0100</pubDate>
+    <lastBuildDate>Sun, 20 Mar 2022 11:51:38 +0100</lastBuildDate>
     <generator>Jekyll v4.2.1</generator>
+    
+      <item>
+        <title>자바스크립트에서의 타입 변환과 단축 평가</title>
+        <description>&lt;h4&gt;암묵적 타입 변환&lt;/h4&gt;
+
+&lt;p&gt;개발자의 의도와 상관없이 코드의 문맥을 고려해서 자바스크립트 엔진에 의해 암묵적으로 타입이 변경된다.&lt;/p&gt;
+
+&lt;h6&gt;문자열 타입으로 변환&lt;/h6&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//'12'&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;피연산자가 하나라도 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;문자열&lt;/code&gt;이 있다면 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;+&lt;/code&gt; 연산자는 문자열을 연결 연산자로 사용하게 된다. 그러므로 저 예제의 경우 문맥상 모두 문자열 타입으로 타입이 변환되어 ‘12’의 문자열 결과값을 나타낸다.&lt;/p&gt;
+
+&lt;h6&gt;숫자 타입으로 변환&lt;/h6&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//-1&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//10&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;one&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//NaN&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;산술 연산자의 피연산자는 모두 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;숫자&lt;/code&gt; 타입으로 변경된다. 만약 산술 연산을 진행할 수 없다면 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;NaN&lt;/code&gt;이 된다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;+&lt;/code&gt;단항 연산자는 피연산자가 숫자가 아니면 숫자로 암묵적으로 변환한다.&lt;/p&gt;
+
+&lt;h6&gt;불리언 타입으로 변환&lt;/h6&gt;
+
+&lt;ul&gt;
+&lt;li&gt;false&lt;/li&gt;
+&lt;li&gt;undefined&lt;/li&gt;
+&lt;li&gt;null&lt;/li&gt;
+&lt;li&gt;0,-0&lt;/li&gt;
+&lt;li&gt;NaN&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;위의 5가지를 제외한 나머지는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;true&lt;/code&gt;의 의미로 암묵적으로 변환된다.&lt;/p&gt;
+
+&lt;h4&gt;명시적 타입 변환&lt;/h4&gt;
+&lt;p&gt;개발자의 의도에 따라 명시적으로 타입을 변경한다.&lt;/p&gt;
+
+&lt;h6&gt;문자열 타입으로 변환&lt;/h6&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;String 생성자 이용&lt;/li&gt;
+  &lt;li&gt;toString 메서드 사용&lt;/li&gt;
+  &lt;li&gt;문자열 연결 연산자 사용&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h6&gt;숫자 타입으로 변환&lt;/h6&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Number 생성자 이용&lt;/li&gt;
+  &lt;li&gt;parseInt, parseFloat 사용&lt;/li&gt;
+  &lt;li&gt;+단항 산술 연산자 사용&lt;/li&gt;
+  &lt;li&gt;*산술 연산자 사용&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h6&gt;불리언 타입으로 변환&lt;/h6&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Boolean 생성자 이용&lt;/li&gt;
+  &lt;li&gt;!! 사용&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        <pubDate>Sun, 20 Mar 2022 00:00:00 +0100</pubDate>
+        <link>https://riverrevir.github.io//2022/03/20/js-study3</link>
+        <guid isPermaLink="true">https://riverrevir.github.io//2022/03/20/js-study3</guid>
+        
+        <category>Javascript</category>
+        
+        
+      </item>
     
       <item>
         <title>자바스크립트에서의 연산자</title>

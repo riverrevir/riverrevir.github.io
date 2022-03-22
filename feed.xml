@@ -5,9 +5,61 @@
     <description></description>
     <link>https://riverrevir.github.io//</link>
     <atom:link href="https://riverrevir.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 22 Mar 2022 09:37:08 +0100</pubDate>
-    <lastBuildDate>Tue, 22 Mar 2022 09:37:08 +0100</lastBuildDate>
+    <pubDate>Tue, 22 Mar 2022 11:41:08 +0100</pubDate>
+    <lastBuildDate>Tue, 22 Mar 2022 11:41:08 +0100</lastBuildDate>
     <generator>Jekyll v4.2.1</generator>
+    
+      <item>
+        <title>자바스크립트에서의 객체 리터럴</title>
+        <description>&lt;h4&gt;객체&lt;/h4&gt;
+
+&lt;p&gt;자바스크립트는 객체 기반의 프로그래밍 언어이다. 원시 값을 제외한 나머지 값은 모두 객체이다. 객체는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;변경 가능한 값&lt;/code&gt;이다. 0개 이상의 프로퍼티로 구성되어 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;키&lt;/code&gt;와 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;값&lt;/code&gt;으로 구성된다.&lt;/p&gt;
+
+&lt;p&gt;자바스크립트의 객체는 일급 객체로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;함수&lt;/code&gt;도 프로퍼티 값으로 사용할 수 있다. 이를 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;메서드&lt;/code&gt;라고 부른다.&lt;/p&gt;
+
+&lt;p&gt;먼저 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;리터럴&lt;/code&gt;이란 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;데이터를 표현하는 방식&lt;/code&gt;이라고 생각하면 된다. 즉 변수를 선언함과 동시에 그 값을 지정해주는 표기법을 말하는데, 이를 객체를 선언할 때 사용할 수 있다. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;{}&lt;/code&gt;중괄호 내에 0개 이상의 프로퍼티를 정의한다.&lt;/p&gt;
+
+&lt;h6&gt;프로퍼티&lt;/h6&gt;
+
+&lt;p&gt;객체는 프로퍼티의 집합이며, 프로퍼티는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;키&lt;/code&gt;와 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;값&lt;/code&gt;으로 구성된다. 프로퍼티를 나열할 때 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;,&lt;/code&gt;로 구분한다. 키의 값은 암묵적으로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;문자열&lt;/code&gt;이 된다.&lt;/p&gt;
+
+&lt;p&gt;프로퍼티에 접근하는 방법에는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;마침표 표기법&lt;/code&gt;과 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;대괄호 표기법&lt;/code&gt;이 있다.&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;LEE&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;마침표 표기법의 경우 키의 값을 반드시 따음표로 감싼 문자열이여야 하고 객체에 존재하지 않는 프로퍼티에 접근하면 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;undefined&lt;/code&gt;를 반환하니 주의해야한다.&lt;/p&gt;
+
+&lt;p&gt;존재하지 않는 프로퍼티에 값을 할당하면 동적으로 생성되고 프로퍼티 값이 할당된다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;delete&lt;/code&gt;연산자를 통해 프로퍼티를 삭제할 수 있다.&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;delete&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;ES6에서 추가된 객체 리터럴의 확장 기능 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;프로퍼티 키와 변수 이름이 같은 경우&lt;/code&gt; 프로퍼티 키를 생략할 수 있다.&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;obj&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;obj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//{x:1, y:2}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;또한 메서드 축약 표현으로 function 키워드를 생략할 수 있다.&lt;/p&gt;
+</description>
+        <pubDate>Tue, 22 Mar 2022 00:00:00 +0100</pubDate>
+        <link>https://riverrevir.github.io//2022/03/22/js-study4</link>
+        <guid isPermaLink="true">https://riverrevir.github.io//2022/03/22/js-study4</guid>
+        
+        <category>Javascript</category>
+        
+        
+      </item>
     
       <item>
         <title>자바스크립트에서의 타입 변환과 단축 평가</title>

@@ -5,8 +5,8 @@
     <description></description>
     <link>https://riverrevir.github.io//</link>
     <atom:link href="https://riverrevir.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 22 Mar 2022 11:41:08 +0100</pubDate>
-    <lastBuildDate>Tue, 22 Mar 2022 11:41:08 +0100</lastBuildDate>
+    <pubDate>Tue, 22 Mar 2022 18:33:12 +0100</pubDate>
+    <lastBuildDate>Tue, 22 Mar 2022 18:33:12 +0100</lastBuildDate>
     <generator>Jekyll v4.2.1</generator>
     
       <item>
@@ -256,6 +256,64 @@
         <guid isPermaLink="true">https://riverrevir.github.io//2022/03/17/js-study1</guid>
         
         <category>Javascript</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>다익스트라(Dijkstra) 알고리즘 추천 문제</title>
+        <description>&lt;h4&gt;다익스트라&lt;/h4&gt;
+
+&lt;p&gt;bfs,dfs는 가중치가 있을 때 최단거리를 표현하기 어려운데, 다익스트라 알고리즘을 사용하면 가능하다. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;하나의 정점&lt;/code&gt;에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;모든 정점&lt;/code&gt;까지의 최단거리를 각각 구해주는 알고리즘이다. 즉 최단 경로 탐색 알고리즘으로써 플로이드 와샬은 음의 간석을 표현할 수 있지만 다익스트라는 불가능하다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;시작노드&lt;/code&gt; 와 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;도착노드&lt;/code&gt; 사이의 최단거리를 찾을 때 유용하게 사용된다.&lt;/p&gt;
+
+&lt;p&gt;너비우선탐색인 bfs를 기본으로 한다.&lt;/p&gt;
+
+&lt;h4&gt;동작과정&lt;/h4&gt;
+
+&lt;p&gt;초기에 시작할 정점을 정해서 인접한 간선 들을 배열에 저장하고 갈 수 없는 간선은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;INF&lt;/code&gt; 로 초기화 한다. 이후에 초기 시작 정점에서 가장 작은 비용을 선택하여 또 다시 배열을 인접한 부분과 이전의 값과 비교하여 최단거리를 계속해서 갱신해나간다.&lt;/p&gt;
+
+&lt;h4&gt;시간 복잡도&lt;/h4&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;우선 순위 큐&lt;/code&gt; 를 사용하지 않으면 O(&lt;/td&gt;
+      &lt;td&gt;V&lt;/td&gt;
+      &lt;td&gt;^{2})이지만 우선 순위 큐에 기반한 알고리즘은 O(&lt;/td&gt;
+      &lt;td&gt;E&lt;/td&gt;
+      &lt;td&gt;+&lt;/td&gt;
+      &lt;td&gt;V&lt;/td&gt;
+      &lt;td&gt;\log&lt;/td&gt;
+      &lt;td&gt;V&lt;/td&gt;
+      &lt;td&gt;)로 최단 경로 알고리즘 중 점근적으로 가장 빠른 알고리즘이다.&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h4&gt;추천 문제&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/1753&quot;&gt;백준 1753번 - 최단경로&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/1504&quot;&gt;백준 1504번 - 특정한 최단 경로&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/1446&quot;&gt;백준 1446번 - 지름길&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/1916&quot;&gt;백준 1916번 - 최소비용 구하기&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/5972&quot;&gt;백준 5972번 - 택배 배송&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/17396&quot;&gt;백준 17396번 - 백도어&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/1238&quot;&gt;백준 1238번 - 파티&lt;/a&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Thu, 17 Mar 2022 00:00:00 +0100</pubDate>
+        <link>https://riverrevir.github.io//2022/03/17/dijkstra</link>
+        <guid isPermaLink="true">https://riverrevir.github.io//2022/03/17/dijkstra</guid>
+        
+        <category>Algorithm</category>
         
         
       </item>

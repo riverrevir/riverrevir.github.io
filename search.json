@@ -37,6 +37,15 @@
     } ,
   
     {
+      "title"    : "다익스트라(Dijkstra) 알고리즘 추천 문제",
+      "description" : "",
+      "category" : "",
+      "tags"     : "Algorithm",
+      "url"      : "//2022/03/17/dijkstra",
+      "date"     : "2022-03-17 00:00:00 +0100"
+    } ,
+  
+    {
       "title"    : "플로이드 와샬(Floydwatershall) 알고리즘 추천 문제",
       "description" : "",
       "category" : "",

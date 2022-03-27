@@ -5,9 +5,161 @@
     <description></description>
     <link>https://riverrevir.github.io//</link>
     <atom:link href="https://riverrevir.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 22 Mar 2022 18:33:12 +0100</pubDate>
-    <lastBuildDate>Tue, 22 Mar 2022 18:33:12 +0100</lastBuildDate>
+    <pubDate>Sun, 27 Mar 2022 14:19:14 +0200</pubDate>
+    <lastBuildDate>Sun, 27 Mar 2022 14:19:14 +0200</lastBuildDate>
     <generator>Jekyll v4.2.1</generator>
+    
+      <item>
+        <title>자바스크립트에서의 스코프 및 변수</title>
+        <description>&lt;h4&gt;스코프&lt;/h4&gt;
+
+&lt;p&gt;다른 언어의 스코프와 구별되는 특징이 있고, var const let 키워드로 선언한 변수의 스코프도 다르게 동작한다. 이는 변수와 함수와 깊은 관련이 있다. 모든 식별자는 자신이 선언된 위치에 의해 다른 코드가 식별자 자신을 참조할 수 있는 유효 범위가 결정된다. 이를 스코프라 하며 스코프는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;식별자가 유요한 범위&lt;/code&gt;를 말한다.&lt;/p&gt;
+
+&lt;p&gt;var 키워드는 같은 스코프 내에서 중복 선언을 허용하여 의도치 않게 변수값이 재할당되어 변경되는 부작용이 발생할 수 있지만, let 이나 const 키워드는 같은 스코프 내에서 중복 선언을 허용하지 않는다.&lt;/p&gt;
+
+&lt;p&gt;스코프는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;전역&lt;/code&gt;과 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;지역&lt;/code&gt;으로 구분한다. 함수 몸체 내부에서 정의한 함수를 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;중첩 함수&lt;/code&gt; 그리고 중첩 함수를 포함하는 함수를 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;외부 함수&lt;/code&gt;라고 한다. 스코프가 함수의 중첩에 의해 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;계층적 구조&lt;/code&gt;를 가지게 된다. 즉 외부 함수의 지역스코프를 상위 스코프라 칭한다. 그리고 최상위 스코프는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;전역 스코프&lt;/code&gt;로써 이러한 계층적으로 연결된 것을 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;스코프 체인&lt;/code&gt;이라고 말한다. 상위 스코프에서 유효한 변수는 하위 스코프에서 자유롭게 참조할 수 있지만 하위 스코프에서 유효한 변수를 상위 스코프에서 참조할 수 없다는 말이다.&lt;/p&gt;
+
+&lt;h6&gt;함수 레벨 스코프&lt;/h6&gt;
+
+&lt;p&gt;다른 언어와 다르게 자바스크립트에서 var 키워드로 선언된 변수는 오로지 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;함수의 코드 블록만을 지역 스코프를 인정한다.&lt;/code&gt; 다만 let, const 키워드는 다른 언어와 개념이 비슷한 블록 레벨 스코프를 지원한다.&lt;/p&gt;
+
+&lt;h4&gt;변수&lt;/h4&gt;
+
+&lt;p&gt;변수는 언젠가 소멸하며, 생물과 유사하게 생성되고 소멸되는 생명 주기가 있다. 전역 변수는 마지막 문이 실행되어 더 이상 실행할 문이 없을 때 종료한다.&lt;/p&gt;
+
+&lt;h6&gt;전역 변수의 문제점&lt;/h6&gt;
+
+&lt;p&gt;암묵적 결합 - 전역 변수는 어디에서든 참조하고 할당할 수 있다. 이는 모든 코드가 전역 변수를 참조하고 변경할 수 있는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;암묵적 결합&lt;/code&gt;을 허용한다. 변수의 유효 범위가 크면 클수록 코드의 가독성은 나빠지고 의도치 않게 상태가 변경될 수 있다.&lt;/p&gt;
+
+&lt;p&gt;긴 생명 주기 - var은 사용하지 않는 것을 권장하며, 전역 변수의 생명 주기는 길기 때문에 메모리 리소스도 오랜 기간 소비한다.&lt;/p&gt;
+
+&lt;p&gt;스코프 체인 상에서 종점에 존재 - 앞에서 배운 계층적 구조에서 전역 변수는 최상위 구조를 가지고 있다.&lt;/p&gt;
+
+&lt;p&gt;네임스페이스 오염 - 파일이 분리되어 있다 해도 하나의 전역 스코프를 공유한다. 즉 예상치 못한 결과를 가지고 올 수 있다.&lt;/p&gt;
+
+</description>
+        <pubDate>Sun, 27 Mar 2022 00:00:00 +0100</pubDate>
+        <link>https://riverrevir.github.io//2022/03/27/js-study6</link>
+        <guid isPermaLink="true">https://riverrevir.github.io//2022/03/27/js-study6</guid>
+        
+        <category>Javascript</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>자바스크립트에서의 함수</title>
+        <description>&lt;h4&gt;함수&lt;/h4&gt;
+
+&lt;p&gt;함수는 코드의 중복을 억제하고 재사용성을 높이며 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;유지보수의 편의성&lt;/code&gt;을 높이고 실수를 줄여 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;코드의 신뢰성&lt;/code&gt;을 높인다.&lt;/p&gt;
+
+&lt;h6&gt;함수 리터럴&lt;/h6&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;f&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;함수도 함수리터럴로 생성할 수 있다. 다른 언어와 다르게 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;함수는 객체이다&lt;/code&gt;라는 점을 이해해야한다. 함수 정의 방식에는 4가지가 있다. 함수 선언문, 함수 표현식, Function 생성자 함수, 화살표 함수가 있다.&lt;/p&gt;
+
+&lt;h6&gt;함수 선언문&lt;/h6&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;함수 선언문은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;함수 이름을 생략할 수 없다.&lt;/code&gt; 함수 호이스팅에 의해 런타임 이전에 함수 객체로 초기화된다.&lt;/p&gt;
+
+&lt;h6&gt;함수 표현식&lt;/h6&gt;
+
+&lt;p&gt;자바스크립트의 함수는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;객체 타입의 값&lt;/code&gt;이다. 이를 일급 객체라고 한다. 즉 함수를 값처럼 자유롭게 사용할 수 있다.&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;add&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;함수 호이스팅에 의해 함수 표현식으로 정의한 함수는 반드시 함수 표현식 이후에 참조 또는 호출해야 한다.&lt;/p&gt;
+
+&lt;h6&gt;화살표 함수&lt;/h6&gt;
+
+&lt;p&gt;ES6에서 도입된 화살표 함수는 function 키워드 대신에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;=&amp;gt;&lt;/code&gt;를 사용한다. 항상 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;익명 함수&lt;/code&gt;로 정의한다.&lt;/p&gt;
+
+&lt;h4&gt;함수 호출&lt;/h4&gt;
+
+&lt;p&gt;매개변수는 함수 몸체 내부에서만 참조가능하다.&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// NaN&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 7&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;자바스크립트 함수의 매개변수 개수는 체크하지 않기 때문에 주의해서 사용해야 한다. 인수가 부족하여 할당되지 않은 매개변수의 값은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;undefined&lt;/code&gt;이고, 초과된 인수는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;무시&lt;/code&gt;된다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;자바스크립트 함수는 매개변수와 인수의 개수가 일치하는지 확인하지 않는다.&lt;/li&gt;
+  &lt;li&gt;자바스크립트는 동적 타입 언어로써, 매개변수의 타입을 사전에 지정할 수 없다.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4&gt;다양한 함수의 형태&lt;/h4&gt;
+
+&lt;h6&gt;즉시 실행 함수&lt;/h6&gt;
+&lt;h6&gt;재귀 함수&lt;/h6&gt;
+&lt;h6&gt;중첩 함수&lt;/h6&gt;
+&lt;h6&gt;콜백 함수&lt;/h6&gt;
+
+</description>
+        <pubDate>Sun, 27 Mar 2022 00:00:00 +0100</pubDate>
+        <link>https://riverrevir.github.io//2022/03/27/js-study5</link>
+        <guid isPermaLink="true">https://riverrevir.github.io//2022/03/27/js-study5</guid>
+        
+        <category>Javascript</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>다익스트라(Dijkstra) 알고리즘 추천 문제</title>
+        <description>&lt;h4&gt;유니온파인트&lt;/h4&gt;
+
+&lt;p&gt;서로 다른 두개의 집합을 병합하는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;union&lt;/code&gt;연산과 집합의 원소가 어떠한 집합에 속해있는지 판단하는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;find&lt;/code&gt;연산을 지원하기에 유니온파인트라는 이름을 붙이게 되었다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;p[]&lt;/code&gt;라는 배열을 사용할 예정이다. 이 배열은 쉽게 말해서 그룹의 루트노드라고 생각하면된다. 그룹을 나눠주면서 결국에는 부모 노드까지 다 탐색을 하여 현재 노드가 같은 그룹인지 판별한다. 기존 초기화는 그룹들을 합쳐주기 이전에 부모가 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;자기자신&lt;/code&gt;으로 초기화 시켜야한다.&lt;/p&gt;
+
+&lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Find&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Find&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;x의 정점이 그룹에 속하는지 안속하는지 판별하는 Find함수이다. 좀 더 자세한 구현로직은 다른 블로그를 참고해보는 것을 추천한다.&lt;/p&gt;
+
+&lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Union&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Find&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Find&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;x,y의 정점을 같은 그룹으로 합쳐주는 Union함수이다.&lt;/p&gt;
+
+&lt;p&gt;https://www.acmicpc.net/problem/1717
+https://www.acmicpc.net/problem/1976
+https://www.acmicpc.net/problem/4195
+https://www.acmicpc.net/problem/16562
+https://www.acmicpc.net/problem/1043&lt;/p&gt;
+
+&lt;p&gt;https://programmers.co.kr/learn/courses/30/lessons/43162&lt;/p&gt;
+</description>
+        <pubDate>Wed, 23 Mar 2022 00:00:00 +0100</pubDate>
+        <link>https://riverrevir.github.io//2022/03/23/unionfind</link>
+        <guid isPermaLink="true">https://riverrevir.github.io//2022/03/23/unionfind</guid>
+        
+        <category>Algorithm</category>
+        
+        
+      </item>
     
       <item>
         <title>자바스크립트에서의 객체 리터럴</title>

@@ -29,9 +29,13 @@ void Union(int x,int y){
 x,y의 정점을 같은 그룹으로 합쳐주는 Union함수이다.
 
 https://www.acmicpc.net/problem/1717
+
 https://www.acmicpc.net/problem/1976
+
 https://www.acmicpc.net/problem/4195
+
 https://www.acmicpc.net/problem/16562
+
 https://www.acmicpc.net/problem/1043
 
 https://programmers.co.kr/learn/courses/30/lessons/43162

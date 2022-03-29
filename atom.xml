@@ -4,7 +4,7 @@
  <title>river.dev</title>
  <link href="https://riverrevir.github.io//atom.xml" rel="self"/>
  <link href="https://riverrevir.github.io//"/>
- <updated>2022-03-27T14:19:14+02:00</updated>
+ <updated>2022-03-29T22:10:32+02:00</updated>
  <id>https://riverrevir.github.io</id>
  <author>
    <name>riverrevir</name>
@@ -142,11 +142,15 @@
 
 &lt;p&gt;x,y의 정점을 같은 그룹으로 합쳐주는 Union함수이다.&lt;/p&gt;
 
-&lt;p&gt;https://www.acmicpc.net/problem/1717
-https://www.acmicpc.net/problem/1976
-https://www.acmicpc.net/problem/4195
-https://www.acmicpc.net/problem/16562
-https://www.acmicpc.net/problem/1043&lt;/p&gt;
+&lt;p&gt;https://www.acmicpc.net/problem/1717&lt;/p&gt;
+
+&lt;p&gt;https://www.acmicpc.net/problem/1976&lt;/p&gt;
+
+&lt;p&gt;https://www.acmicpc.net/problem/4195&lt;/p&gt;
+
+&lt;p&gt;https://www.acmicpc.net/problem/16562&lt;/p&gt;
+
+&lt;p&gt;https://www.acmicpc.net/problem/1043&lt;/p&gt;
 
 &lt;p&gt;https://programmers.co.kr/learn/courses/30/lessons/43162&lt;/p&gt;
 </content>

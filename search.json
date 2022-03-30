@@ -1,6 +1,15 @@
 [
   
     {
+      "title"    : "자바스크립트에서의 프로퍼티 어트리뷰트",
+      "description" : "",
+      "category" : "",
+      "tags"     : "Javascript",
+      "url"      : "//2022/03/30/js-study8",
+      "date"     : "2022-03-30 00:00:00 +0200"
+    } ,
+  
+    {
       "title"    : "자바스크립트에서의 var, let, const 키워드",
       "description" : "",
       "category" : "",

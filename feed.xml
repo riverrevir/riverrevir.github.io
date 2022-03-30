@@ -5,9 +5,30 @@
     <description></description>
     <link>https://riverrevir.github.io//</link>
     <atom:link href="https://riverrevir.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 30 Mar 2022 16:33:21 +0200</pubDate>
-    <lastBuildDate>Wed, 30 Mar 2022 16:33:21 +0200</lastBuildDate>
+    <pubDate>Wed, 30 Mar 2022 18:06:31 +0200</pubDate>
+    <lastBuildDate>Wed, 30 Mar 2022 18:06:31 +0200</lastBuildDate>
     <generator>Jekyll v4.2.1</generator>
+    
+      <item>
+        <title>자바스크립트에서의 프로퍼티 어트리뷰트</title>
+        <description>&lt;h4&gt;프로퍼티 어트리뷰트&lt;/h4&gt;
+&lt;p&gt;자바스크립트 엔진은 프로퍼티를 생성할 때 프로퍼티의 상태를 나타내는 프로퍼티 어트리뷰트를 기본값으로 자동 정의한다. 프로퍼티의 상태란 프로퍼티의 값, 값의 갱신 가능 여부, 열거 가능 여부, 재정의 가능 여부를 말한다.&lt;/p&gt;
+
+&lt;h5 id=&quot;프로퍼티&quot;&gt;프로퍼티&lt;/h5&gt;
+&lt;p&gt;데이터 프로퍼티 - 키와 값으로 구성된 일반적인 프로퍼티다.&lt;/p&gt;
+
+&lt;p&gt;접근자 프로퍼티 - 자체적으로는 값을 갖지 않고 다른 데이터 프로퍼티의 값을 읽거나 저장할 때 호출되는 접근자 함수로 구성된 프로퍼티다.&lt;/p&gt;
+
+&lt;p&gt;좀 더 세부적인 내용은 자세한 공부를 하고 추후 추가하도록 하겠다.&lt;/p&gt;
+</description>
+        <pubDate>Wed, 30 Mar 2022 00:00:00 +0200</pubDate>
+        <link>https://riverrevir.github.io//2022/03/30/js-study8</link>
+        <guid isPermaLink="true">https://riverrevir.github.io//2022/03/30/js-study8</guid>
+        
+        <category>Javascript</category>
+        
+        
+      </item>
     
       <item>
         <title>자바스크립트에서의 var, let, const 키워드</title>

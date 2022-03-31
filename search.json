@@ -1,6 +1,15 @@
 [
   
     {
+      "title"    : "자바스크립트에서의 생성자 함수에 의한 객체 생성",
+      "description" : "",
+      "category" : "",
+      "tags"     : "Javascript",
+      "url"      : "//2022/03/31/js-study9",
+      "date"     : "2022-03-31 00:00:00 +0200"
+    } ,
+  
+    {
       "title"    : "자바스크립트에서의 프로퍼티 어트리뷰트",
       "description" : "",
       "category" : "",

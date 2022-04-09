@@ -4,13 +4,63 @@
  <title>river.dev</title>
  <link href="https://riverrevir.github.io//atom.xml" rel="self"/>
  <link href="https://riverrevir.github.io//"/>
- <updated>2022-03-31T10:42:01+02:00</updated>
+ <updated>2022-04-09T08:48:50+02:00</updated>
  <id>https://riverrevir.github.io</id>
  <author>
    <name>riverrevir</name>
    <email>dgdev@naver.com</email>
  </author>
 
+ 
+ <entry>
+   <title>자바스크립트에서의 함수와 일급 객체</title>
+   <link href="https://riverrevir.github.io//2022/04/04/js-study10"/>
+   <updated>2022-04-04T00:00:00+02:00</updated>
+   <id>https://riverrevir.github.io/2022/04/04/js_study10</id>
+   <content type="html">&lt;h4&gt;일급 객체&lt;/h4&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;무명의 리터럴로 생성할 수 있고, 런타임에 생성이 가능하다.&lt;/li&gt;
+  &lt;li&gt;변수나 자료구조에 저장할 수 있다.&lt;/li&gt;
+  &lt;li&gt;함수의 매개변수에 전달할 수 있다.&lt;/li&gt;
+  &lt;li&gt;함수의 반환값으로 사용할 수 있다.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;자바스크립트의 함수는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;무명의 리터럴&lt;/code&gt;로 생성할 수 있고, 변수에 저장할 수 도 있다. 즉 함수는 값을 사용할 수 있는 곳이라면 어디서든지 리터럴로 정의할 수 있으며 런타임에 함수 객체로 평가된다.&lt;/p&gt;
+
+&lt;p&gt;일급 객체로서 함수가 가지는 가장 큰 특징은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;일반 객체와 같이 함수의 매개변수에 전달할 수 있으며&lt;/code&gt;, 함수의 반환값으로 사용할 수도 있다. 이는 함수형 프로그래밍을 가능케 하는 자바스크립트의 장점 중 하나다.&lt;/p&gt;
+
+&lt;h6&gt;함수 객체의 프로퍼티&lt;/h6&gt;
+
+&lt;p&gt;함수는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;객체&lt;/code&gt;다. 즉 함수도 프로퍼티를 가질 수 있는데, 프로퍼티들에 대해서 알아보자.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;arguments&lt;/code&gt;프로퍼티&lt;/p&gt;
+
+&lt;p&gt;함수 호출 시 전달된 인수들의 정보를 담고 있는 순회 가능한 유사 배열 객체이며, 함수 내부에서 지역 변수처럼 사용된다. 즉 함수 외부에서는 참조가 불가능하다.&lt;/p&gt;
+
+&lt;p&gt;arguments 객체는 배열 형태로 인자 정보를 담고 있지만 실제 배열이 아닌 유사 배열 객체다. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;유사 배열 객체&lt;/code&gt;란 length 프로퍼티를 가진 객체로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;for&lt;/code&gt;문으로 순회할 수 있는 객체를 말한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;caller&lt;/code&gt;프로퍼티&lt;/p&gt;
+
+&lt;p&gt;ECMAScript 사양에 포함되지 않은 비표준 프로퍼티이므로, 여기서는 자세히 다루지 않겠다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;length&lt;/code&gt;프로퍼티&lt;/p&gt;
+
+&lt;p&gt;함수를 정의할 때 선언한 매개변수의 개수를 가리킨다. arguments 객체의 length 프로퍼티는 인자의 개수를 가리키고, 함수 객체의 length 프로퍼티는 매개변수의 개수를 가리킨다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;name&lt;/code&gt;프로퍼티&lt;/p&gt;
+
+&lt;p&gt;ES6이전까지는 비표준이였다가 ES6에서 정식 표준이 되었다. 익명 함수 표현식에서 서로 차이가 있다. ES5에서는 빈 문자열을 값으로 가지지만, ES6에서는 함수 객체를 가리키는 변수 이름을 값으로 가진다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;__proto__&lt;/code&gt;접근자 프로퍼티&lt;/p&gt;
+
+&lt;p&gt;모든 객체는 [prototype] 이라는 내부 슬롯을 갖는다. 객체 지향 프로그래밍의 상속을 구현하는 프로토타입 객체를 가리킨다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;prototype&lt;/code&gt;프로퍼티&lt;/p&gt;
+
+&lt;p&gt;생성자 함수로 호출할 수 있는 함수 객체, 즉 constructor만이 소유하는 프로퍼티이다. 일반 객체와 생성자 함수로 호출할 수 없는 non-constructor에는 prototype 프로퍼티가 없다.&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>자바스크립트에서의 생성자 함수에 의한 객체 생성</title>

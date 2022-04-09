@@ -1,6 +1,15 @@
 [
   
     {
+      "title"    : "자바스크립트에서의 strict mode",
+      "description" : "",
+      "category" : "",
+      "tags"     : "Javascript",
+      "url"      : "//2022/04/09/js-study12",
+      "date"     : "2022-04-09 00:00:00 +0200"
+    } ,
+  
+    {
       "title"    : "자바스크립트에서의 함수와 일급 객체",
       "description" : "",
       "category" : "",

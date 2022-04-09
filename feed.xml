@@ -5,9 +5,54 @@
     <description></description>
     <link>https://riverrevir.github.io//</link>
     <atom:link href="https://riverrevir.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 09 Apr 2022 08:48:50 +0200</pubDate>
-    <lastBuildDate>Sat, 09 Apr 2022 08:48:50 +0200</lastBuildDate>
+    <pubDate>Sat, 09 Apr 2022 10:03:44 +0200</pubDate>
+    <lastBuildDate>Sat, 09 Apr 2022 10:03:44 +0200</lastBuildDate>
     <generator>Jekyll v4.2.1</generator>
+    
+      <item>
+        <title>자바스크립트에서의 strict mode</title>
+        <description>&lt;h4&gt;strict mode&lt;/h4&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;자바스크립트 엔진은 x 변수가 어디에서 선언되었는지 스코프 체인을 통해 검색하기 시작한다. 하지만 foo에서 x는 선언되어 있지 않으니 상위 스코프에서 x 변수의 선언을 검색한다. 전역 스코프에서도 x의 선언을 찾을 수 없으니 참조에러를 발생시킬 것 같지만 암묵적으로 전역 객체에 x 프로퍼티를 동적 생성한다. 이를 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;암묵적 전역&lt;/code&gt;이라고 한다. 이는 오류를 발생시키는 원인이 되므로 항상 키워드를 사용하여 변수를 선언한 다음 사용해야 한다.&lt;/p&gt;
+
+&lt;p&gt;사람은 항상 실수를 하기에 잠재적인 오류를 발생시키기 어려운 개발 환경을 만들고 그 환경에서 개발하는 것이 좀 더 근본적인 해결책이라고 할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;strict mode&lt;/code&gt;를 사용하면 자바스크립트 엔진의 최적화 작업에 문제를 일으킬 수 있는 코드에 대해 명시적인 에러를 발생시킨다.&lt;/p&gt;
+
+&lt;h6&gt;적용&lt;/h6&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;use strict;&lt;/code&gt;를 선두에 추가한다. 전역의 선두에 추가하면 스크립트 전체에 strict mode가 적용된다.&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;use strict&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 참조에러&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;일반 함수의 this&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;strict mode에서 일반 함수로서 호출하면 this에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;undefined&lt;/code&gt;가 바인딩된다. 굳이 일반함수에서 this를 사용할 필요가 없기때문이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;arguments 객체&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;매개변수에 전달된 인수를 재할당하여 변경해도 arguments 객체에 반영되지 않는다.&lt;/p&gt;
+</description>
+        <pubDate>Sat, 09 Apr 2022 00:00:00 +0200</pubDate>
+        <link>https://riverrevir.github.io//2022/04/09/js-study12</link>
+        <guid isPermaLink="true">https://riverrevir.github.io//2022/04/09/js-study12</guid>
+        
+        <category>Javascript</category>
+        
+        
+      </item>
     
       <item>
         <title>자바스크립트에서의 함수와 일급 객체</title>
@@ -2109,94 +2154,6 @@ mysql&amp;gt; SELECT HOUR('272:59:59');
         <guid isPermaLink="true">https://riverrevir.github.io//2022/02/23/boj-16234</guid>
         
         <category>BOJ</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Markdown 문법 정리</title>
-        <description>&lt;p&gt;마크다운 언어로 블로그를 작성하다 보니 자주 사용하는 것들을 위주로 정리해보록 하겠다.&lt;/p&gt;
-&lt;h4&gt;줄 바꾸기&lt;/h4&gt;
-&lt;p&gt;행을 바꾸고 싶으면  &lt;strong&gt;스페이스 두번 입력후 엔터&lt;/strong&gt;  를 눌러준다.&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;과거의 줄입니다.  
-새로운 줄입니다.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;과거의 줄입니다.&lt;br /&gt;
-새로운 줄입니다.&lt;/p&gt;
-
-&lt;h4&gt;문단 나누기&lt;/h4&gt;
-&lt;p&gt;한 문단을 비워두고 작성한다.&lt;/p&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;1번 문단
-
-2번 문단
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;1번 문단&lt;/p&gt;
-
-&lt;p&gt;2번 문단&lt;/p&gt;
-
-&lt;h4&gt;header&lt;/h4&gt;
-&lt;p&gt;글의 제목의 크기를 쉽게 표현할 수 있다.&lt;/p&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# h1
-## h2
-### h3
-#### h4
-##### h5
-###### h6
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;h1 id=&quot;h1&quot;&gt;h1&lt;/h1&gt;
-&lt;h2 id=&quot;h2&quot;&gt;h2&lt;/h2&gt;
-&lt;h3 id=&quot;h3&quot;&gt;h3&lt;/h3&gt;
-&lt;h4 id=&quot;h4&quot;&gt;h4&lt;/h4&gt;
-&lt;h5 id=&quot;h5&quot;&gt;h5&lt;/h5&gt;
-&lt;h6 id=&quot;h6&quot;&gt;h6&lt;/h6&gt;
-
-&lt;h4&gt;강조&lt;/h4&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;_강조1_
-__강조2__
-**강조**
-***강조***
-&amp;lt;u&amp;gt;밑줄&amp;lt;/u&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;em&gt;강조1&lt;/em&gt;&lt;br /&gt;
-&lt;strong&gt;강조2&lt;/strong&gt;&lt;br /&gt;
-&lt;strong&gt;강조&lt;/strong&gt;&lt;br /&gt;
-&lt;strong&gt;&lt;em&gt;강조&lt;/em&gt;&lt;/strong&gt;&lt;br /&gt;
-&lt;u&gt;밑줄&lt;/u&gt;&lt;/p&gt;
-
-&lt;h4&gt;코드 블록&lt;/h4&gt;
-&lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;#include&lt;/span&gt;&lt;span class=&quot;cpf&quot;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;span class=&quot;cp&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h4&gt;글씨 색&lt;/h4&gt;
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;span&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;style=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;color:red&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;글씨색 바꾸기&lt;span class=&quot;nt&quot;&gt;&amp;lt;/span&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;span style=&quot;color:red&quot;&gt;글씨색 바꾸기&lt;/span&gt;&lt;/p&gt;
-
-&lt;h4&gt;인라인&lt;/h4&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;글자를 `여기를` 강조 하고 싶을 때 사용한다.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;글자를 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;여기를&lt;/code&gt; 강조 하고 싶을 때 사용한다.&lt;/p&gt;
-
-&lt;h4&gt;인용문&lt;/h4&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt;인용문1
-&amp;gt;&amp;gt;인용문2
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;인용문1&lt;/p&gt;
-  &lt;blockquote&gt;
-    &lt;p&gt;인용문2&lt;/p&gt;
-  &lt;/blockquote&gt;
-&lt;/blockquote&gt;
-</description>
-        <pubDate>Sun, 20 Feb 2022 00:00:00 +0100</pubDate>
-        <link>https://riverrevir.github.io//2022/02/20/markdown</link>
-        <guid isPermaLink="true">https://riverrevir.github.io//2022/02/20/markdown</guid>
-        
-        <category>markdown</category>
         
         
       </item>

@@ -5,8 +5,8 @@
     <description></description>
     <link>https://riverrevir.github.io//</link>
     <atom:link href="https://riverrevir.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 25 Apr 2022 12:33:57 +0200</pubDate>
-    <lastBuildDate>Mon, 25 Apr 2022 12:33:57 +0200</lastBuildDate>
+    <pubDate>Mon, 25 Apr 2022 16:35:54 +0200</pubDate>
+    <lastBuildDate>Mon, 25 Apr 2022 16:35:54 +0200</lastBuildDate>
     <generator>Jekyll v4.2.1</generator>
     
       <item>
@@ -57,7 +57,7 @@ Object 클래스에서 모든 클래스를 파생한다.&lt;/li&gt;
 
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;어떤 프로그램이든 시작과 끝이 있어야 한다. 이 시작과 끝을 관리하는 것이 main 메소드 이다. 자바의 하나의 규칙이라 생각하고 public static void main(String[] args) 의 형태를 암기하도록 하자. 이후에 차근히 알아볼 수 있도록 하겠다.&lt;/p&gt;
+&lt;p&gt;어떤 프로그램이든 시작과 끝이 있어야 한다. 이 시작과 끝을 관리하는 것이 main 메소드 이다. 자바의 하나의 규칙이라 생각하고 public static void main(String[] args) 의 형태를 암기하도록 하자. 이후에 차근히 알아볼 수 있도록 하겠다. IDE는 이클립스를 사용하여 작성해보도록 하겠다.&lt;/p&gt;
 
 </description>
         <pubDate>Sun, 24 Apr 2022 00:00:00 +0200</pubDate>

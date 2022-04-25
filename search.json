@@ -1,6 +1,15 @@
 [
   
     {
+      "title"    : "자바의 특징 및 기초",
+      "description" : "",
+      "category" : "",
+      "tags"     : "Java",
+      "url"      : "//2022/04/24/java-study1",
+      "date"     : "2022-04-24 00:00:00 +0200"
+    } ,
+  
+    {
       "title"    : "자바스크립트에서의 빌트인 객체",
       "description" : "",
       "category" : "",

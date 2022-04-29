@@ -4,7 +4,7 @@
  <title>river.dev</title>
  <link href="https://riverrevir.github.io//atom.xml" rel="self"/>
  <link href="https://riverrevir.github.io//"/>
- <updated>2022-04-29T11:36:23+02:00</updated>
+ <updated>2022-04-29T11:36:46+02:00</updated>
  <id>https://riverrevir.github.io</id>
  <author>
    <name>riverrevir</name>
@@ -13,7 +13,7 @@
 
  
  <entry>
-   <title>자바 소스코드의 구조 및 객체지향이란?</title>
+   <title>스프링부트의 구조 및 엔티티 설계 - 게시판만들기(1)</title>
    <link href="https://riverrevir.github.io//2022/04/28/springboot-study1"/>
    <updated>2022-04-28T00:00:00+02:00</updated>
    <id>https://riverrevir.github.io/2022/04/28/springboot_study1</id>

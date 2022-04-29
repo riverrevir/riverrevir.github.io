@@ -5,12 +5,12 @@
     <description></description>
     <link>https://riverrevir.github.io//</link>
     <atom:link href="https://riverrevir.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 29 Apr 2022 11:36:23 +0200</pubDate>
-    <lastBuildDate>Fri, 29 Apr 2022 11:36:23 +0200</lastBuildDate>
+    <pubDate>Fri, 29 Apr 2022 11:36:46 +0200</pubDate>
+    <lastBuildDate>Fri, 29 Apr 2022 11:36:46 +0200</lastBuildDate>
     <generator>Jekyll v4.2.1</generator>
     
       <item>
-        <title>자바 소스코드의 구조 및 객체지향이란?</title>
+        <title>스프링부트의 구조 및 엔티티 설계 - 게시판만들기(1)</title>
         <description>&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;@Controller&lt;/code&gt; 애너테이션은 컨트롤러의 기능을 수행한다는 의미로, 스프링부트 프레임워크가 이 코드를 컨트롤러로 인식하게 해준다.&lt;/p&gt;
 
 &lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nd&quot;&gt;@Controller&lt;/span&gt;
@@ -166,7 +166,7 @@
         <link>https://riverrevir.github.io//2022/04/28/springboot-study1</link>
         <guid isPermaLink="true">https://riverrevir.github.io//2022/04/28/springboot-study1</guid>
         
-        <category>Java</category>
+        <category>Spring</category>
         
         
       </item>

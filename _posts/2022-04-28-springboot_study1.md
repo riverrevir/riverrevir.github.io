@@ -1,8 +1,8 @@
 ---
 layout: post
-title: 자바 소스코드의 구조 및 객체지향이란?
+title: 스프링부트의 구조 및 엔티티 설계 - 게시판만들기(1)
 comments: true
-tags: Java
+tags: Spring
 ---
 
 `@Controller` 애너테이션은 컨트롤러의 기능을 수행한다는 의미로, 스프링부트 프레임워크가 이 코드를 컨트롤러로 인식하게 해준다.

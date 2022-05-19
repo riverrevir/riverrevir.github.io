@@ -4,13 +4,64 @@
  <title>river.dev</title>
  <link href="https://riverrevir.github.io//atom.xml" rel="self"/>
  <link href="https://riverrevir.github.io//"/>
- <updated>2022-05-06T18:06:10+02:00</updated>
+ <updated>2022-05-19T07:04:23+02:00</updated>
  <id>https://riverrevir.github.io</id>
  <author>
    <name>riverrevir</name>
    <email>dgdev@naver.com</email>
  </author>
 
+ 
+ <entry>
+   <title>IntelliJ DB Navigator Connection error</title>
+   <link href="https://riverrevir.github.io//2022/05/18/db-error"/>
+   <updated>2022-05-18T00:00:00+02:00</updated>
+   <id>https://riverrevir.github.io/2022/05/18/db_error</id>
+   <content type="html">&lt;h4&gt;에러 내용&lt;/h4&gt;
+
+&lt;p&gt;DB Navigator - Connection error 중 time zone 에러가 있다면 이렇게 따라 하시면 됩니다. 저도 몇번 고생끝에 해결하였습니다.&lt;/p&gt;
+
+&lt;p&gt;우선 저는 인텔리제이 커뮤니티버전을 사용하여 유료버전인 데이터베이스를 제공하지 않는 버전을 사용하고 있어 커뮤니티 버전을 사용하시는 분들은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;마켓에서 DB Navigator&lt;/code&gt;를 다운로드 해야합니다.&lt;/p&gt;
+
+&lt;p&gt;아마 대부분 타임존 관련 데이터가 없을거라 생각하고 바로 파일을 다운로드 해보겠습니다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://dev.mysql.com/downloads/timezones.html&quot;&gt;파일 다운로드&lt;/a&gt; 여기서 timezone_2022a_posix_sql.zip을 다운로드 받습니다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;다운로드된 파일 맨 위의 문장에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;use mysql&lt;/code&gt;한줄을 입력해주고 실행시키면 타임존 데이터가 설치된다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;아래의 코드를 실행시키면된다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SET&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;global&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;time_zone&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;Asia/Seoul&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;SET&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;time_zone&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;Asia/Seoul&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;프로젝트 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;application.yml&lt;/code&gt; 부분에도 설정해줄 때 대부분 예제를 보면 UTC로 되어있는데 이부분 또한 수정해줘야 한다. 이번에 진행할 프로젝트에서는 yml을 사용하여 진행하고 있어서 yml을 기준으로 설정파일을 올립니다.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nl&quot;&gt;spring:&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;datasource:&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;driver&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;com&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;mysql&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;cj&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;jdbc&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;Driver&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;url:&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;jdbc:mysql:&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//localhost:3306/스키마이름적으면됩니다?serverTimezone=Asia/Seoul&amp;amp;characterEncoding=UTF-8&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;username:&lt;/span&gt; 
+    &lt;span class=&quot;nl&quot;&gt;password:&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;인텔리제이 왼쪽탭에 DB Navigator을 클릭하여 MySQL을 연동하면 됩니다.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4&gt;회고&lt;/h4&gt;
+
+&lt;p&gt;대부분 학생인증 버전을 사용하고 있어서 이러한 고충은 없겠지만, 저또한 학생인증 버전으로 빨리 갈아타기전에 발견한 고충으로 자료가 몇개 없어서 저처럼 이렇게 삽질을 하시지 마라고 에러내용을 정리합니다.&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>템플릿 상속과 질문 게시판 추가하기 - 게시판만들기(5)</title>

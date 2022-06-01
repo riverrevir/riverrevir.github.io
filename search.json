@@ -1,6 +1,15 @@
 [
   
     {
+      "title"    : "알고리즘 - 프로그래밍 기법",
+      "description" : "",
+      "category" : "",
+      "tags"     : "Algorithm",
+      "url"      : "//2022/06/01/greenbook1",
+      "date"     : "2022-06-01 00:00:00 +0200"
+    } ,
+  
+    {
       "title"    : "IntelliJ DB Navigator Connection error",
       "description" : "",
       "category" : "",

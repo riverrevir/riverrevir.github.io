@@ -5,13 +5,13 @@
     <description></description>
     <link>https://riverrevir.github.io//</link>
     <atom:link href="https://riverrevir.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 01 Jun 2022 12:22:13 +0200</pubDate>
-    <lastBuildDate>Wed, 01 Jun 2022 12:22:13 +0200</lastBuildDate>
+    <pubDate>Wed, 01 Jun 2022 18:57:32 +0200</pubDate>
+    <lastBuildDate>Wed, 01 Jun 2022 18:57:32 +0200</lastBuildDate>
     <generator>Jekyll v4.2.1</generator>
     
       <item>
         <title>알고리즘 - 프로그래밍 기법</title>
-        <description>&lt;p&gt;&lt;strong&gt;나머지 연산&lt;/strong&gt;&lt;/p&gt;
+        <description>&lt;h4&gt;나머지 연산&lt;/h4&gt;
 
 &lt;p&gt;(a+b) mod m = (a mod m + b mod m) mod m&lt;/p&gt;
 
@@ -19,11 +19,9 @@
 
 &lt;p&gt;(a*b) mod m = (a mod m * b mod m) mod m&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;재귀적 알고리즘&lt;/strong&gt;&lt;/p&gt;
+&lt;h4&gt;재귀적 알고리즘&lt;/h4&gt;
 
-&lt;ol&gt;
-  &lt;li&gt;부분집합 생성하기&lt;/li&gt;
-&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;부분집합 생성하기&lt;/strong&gt;&lt;/p&gt;
 
 &lt;div class=&quot;language-cpp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;search&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
 	&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
@@ -38,9 +36,7 @@
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;ol&gt;
-  &lt;li&gt;순열 생성하기&lt;/li&gt;
-&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;순열 생성하기&lt;/strong&gt;&lt;/p&gt;
 
 &lt;div class=&quot;language-cpp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;search&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
 	&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;permutation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
@@ -59,11 +55,11 @@
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;strong&gt;퇴각검색&lt;/strong&gt;&lt;/p&gt;
+&lt;h4&gt;퇴각검색&lt;/h4&gt;
 
 &lt;p&gt;수정예정&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;비트연산&lt;/strong&gt;&lt;/p&gt;
+&lt;h4&gt;비트연산&lt;/h4&gt;
 
 &lt;p&gt;x « k 왼쪽 시프트 연산은 정수의 오른쪽에 비트 0을 k개 덧붙이는 연산이다.&lt;/p&gt;
 
@@ -73,8 +69,9 @@
 
 &lt;p&gt;오른쪽 시프트는 x에 2^k로 나눈 후 정수로 내림 한 것과 같다.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;회고&lt;/strong&gt;
-백트레킹 부분을 좀 더 보강해야하고, 비트마스킹에 대한 흐름을 이해하게 되었다. 이번 장에서는 딱히 자세하게 정리할 부분이 없기에 빠르게 넘어가도록 하겠다.&lt;/p&gt;
+&lt;h4&gt;회고&lt;/h4&gt;
+
+&lt;p&gt;백트레킹 부분을 좀 더 보강해야하고, 비트마스킹에 대한 흐름을 이해하게 되었다. 이번 장에서는 딱히 자세하게 정리할 부분이 없기에 빠르게 넘어가도록 하겠다.&lt;/p&gt;
 </description>
         <pubDate>Wed, 01 Jun 2022 00:00:00 +0200</pubDate>
         <link>https://riverrevir.github.io//2022/06/01/greenbook1</link>

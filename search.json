@@ -10,6 +10,15 @@
     } ,
   
     {
+      "title"    : "알고리즘 문제 추천 및 해설(1)",
+      "description" : "",
+      "category" : "",
+      "tags"     : "BOJ",
+      "url"      : "//2022/06/03/algo1",
+      "date"     : "2022-06-03 00:00:00 +0200"
+    } ,
+  
+    {
       "title"    : "알고리즘 - 프로그래밍 기법",
       "description" : "",
       "category" : "",

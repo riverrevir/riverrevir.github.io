@@ -1,6 +1,15 @@
 [
   
     {
+      "title"    : "IntelliJ Spring boot MySQL Error - Field &#39;id&#39; doesn&#39;t have a default value",
+      "description" : "",
+      "category" : "",
+      "tags"     : "Error",
+      "url"      : "//2022/06/03/db-error1",
+      "date"     : "2022-06-03 00:00:00 +0200"
+    } ,
+  
+    {
       "title"    : "알고리즘 - 프로그래밍 기법",
       "description" : "",
       "category" : "",

@@ -4,13 +4,33 @@
  <title>river.dev</title>
  <link href="https://riverrevir.github.io//atom.xml" rel="self"/>
  <link href="https://riverrevir.github.io//"/>
- <updated>2022-06-01T18:57:32+02:00</updated>
+ <updated>2022-06-02T19:59:12+02:00</updated>
  <id>https://riverrevir.github.io</id>
  <author>
    <name>riverrevir</name>
    <email>dgdev@naver.com</email>
  </author>
 
+ 
+ <entry>
+   <title>IntelliJ Spring boot MySQL Error - Field &apos;id&apos; doesn&apos;t have a default value</title>
+   <link href="https://riverrevir.github.io//2022/06/03/db-error1"/>
+   <updated>2022-06-03T00:00:00+02:00</updated>
+   <id>https://riverrevir.github.io/2022/06/03/db_error1</id>
+   <content type="html">&lt;h4&gt;에러 내용&lt;/h4&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Field &apos;id&apos; doesn&apos;t have a default value&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;nd&quot;&gt;@Id&lt;/span&gt;
+    &lt;span class=&quot;nd&quot;&gt;@GeneratedValue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;strategy&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;GenerationType&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;IDENTITY&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Long&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4&gt;해결 방법&lt;/h4&gt;
+
+&lt;p&gt;기본 키 값이 생성될 수 있도록 설정하였으나, 오류가 나는경우 MySQL에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;컬럼 설정에서 AI(Auto Increment)를 체크&lt;/code&gt; 해줘야 한다.&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>알고리즘 - 프로그래밍 기법</title>

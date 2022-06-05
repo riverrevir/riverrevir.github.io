@@ -37,6 +37,15 @@
     } ,
   
     {
+      "title"    : "스프링 시큐리티 + 회원가입 구현 - 토이프로젝트(1)",
+      "description" : "",
+      "category" : "",
+      "tags"     : "Spring",
+      "url"      : "//2022/05/08/springboot-study6",
+      "date"     : "2022-05-08 00:00:00 +0200"
+    } ,
+  
+    {
       "title"    : "템플릿 상속과 질문 게시판 추가하기 - 게시판만들기(5)",
       "description" : "",
       "category" : "",

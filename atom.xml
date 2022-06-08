@@ -4,13 +4,28 @@
  <title>river.dev</title>
  <link href="https://riverrevir.github.io//atom.xml" rel="self"/>
  <link href="https://riverrevir.github.io//"/>
- <updated>2022-06-05T10:35:34+02:00</updated>
+ <updated>2022-06-08T11:21:49+02:00</updated>
  <id>https://riverrevir.github.io</id>
  <author>
    <name>riverrevir</name>
    <email>dgdev@naver.com</email>
  </author>
 
+ 
+ <entry>
+   <title></title>
+   <link href="https://riverrevir.github.io//2022/06/08/2022-06-08-error1"/>
+   <updated>2022-06-08T11:21:49+02:00</updated>
+   <id>https://riverrevir.github.io/2022/06/08/2022-06-08-error1</id>
+   <content type="html">&lt;h4&gt;SLF4J: Class path contains multiple SLF4J bindings&lt;/h4&gt;
+
+&lt;p&gt;서버단에서 동작하는 과정을 로그를 찍음으로써, 디버깅을 하는 경우가 종종있는데, 모듈들이 충돌해서 일어나는 오류입니다.&lt;/p&gt;
+
+&lt;h4&gt;해결 방법&lt;/h4&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;build.gradle&lt;/code&gt;에서 로깅하는 모듈들의 줄을 삭제하고 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;implementation &apos;org.springframework.boot:spring-boot-starter-logging:2.6.8&apos;&lt;/code&gt;를 추가하여 설치해주면 해결가능하다.&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>IntelliJ Spring boot MySQL Error - Field &apos;id&apos; doesn&apos;t have a default value</title>

@@ -5,8 +5,8 @@
     <description></description>
     <link>https://riverrevir.github.io//</link>
     <atom:link href="https://riverrevir.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 08 Jun 2022 12:55:13 +0200</pubDate>
-    <lastBuildDate>Wed, 08 Jun 2022 12:55:13 +0200</lastBuildDate>
+    <pubDate>Thu, 09 Jun 2022 15:28:19 +0200</pubDate>
+    <lastBuildDate>Thu, 09 Jun 2022 15:28:19 +0200</lastBuildDate>
     <generator>Jekyll v4.2.1</generator>
     
       <item>
@@ -19,9 +19,9 @@
 
 &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;build.gradle&lt;/code&gt;에서 로깅하는 모듈들의 줄을 삭제하고 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;implementation &apos;org.springframework.boot:spring-boot-starter-logging:2.6.8&apos;&lt;/code&gt;를 추가하여 설치해주면 해결가능하다.&lt;/p&gt;
 </description>
-        <pubDate>Wed, 08 Jun 2022 12:55:13 +0200</pubDate>
-        <link>https://riverrevir.github.io//2022/06/08/2022-06-08-error1</link>
-        <guid isPermaLink="true">https://riverrevir.github.io//2022/06/08/2022-06-08-error1</guid>
+        <pubDate>Thu, 09 Jun 2022 15:28:19 +0200</pubDate>
+        <link>https://riverrevir.github.io//2022/06/09/2022-06-08-error1</link>
+        <guid isPermaLink="true">https://riverrevir.github.io//2022/06/09/2022-06-08-error1</guid>
         
         
       </item>
@@ -337,6 +337,8 @@
 &lt;p&gt;이걸 작성하면서 여러 가지 오류에 휘말려서 진행에 힘든점도 있었지만, 계속해서 오류를 접할 때 마다 이슈로 정리하여 다른 사람들도 나와 같은 오류가 발생하였을 때 시간낭비를 하지 않도록 하기 위해서 블로그나 깃허브에 정리하고 있습니다.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://github.com/riverrevir/devstudy-today/issues/17&quot;&gt;에러 발생 및 해결방안&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;이제 JWT 토큰을 가지고 어떤식으로 해야할지,, 고민을 해봐야겠다. 어플과의 통신은 JSON만 넘겨주면 될거 같았는데, 지금은 또 어떤 느낌으로 해야할지 모르겠다.&lt;/p&gt;
 </description>
         <pubDate>Mon, 06 Jun 2022 00:00:00 +0200</pubDate>
         <link>https://riverrevir.github.io//2022/06/06/springboot-study8</link>

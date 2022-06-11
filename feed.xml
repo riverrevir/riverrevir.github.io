@@ -5,12 +5,12 @@
     <description></description>
     <link>https://riverrevir.github.io//</link>
     <atom:link href="https://riverrevir.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 09 Jun 2022 15:28:19 +0200</pubDate>
-    <lastBuildDate>Thu, 09 Jun 2022 15:28:19 +0200</lastBuildDate>
+    <pubDate>Sat, 11 Jun 2022 11:48:24 +0200</pubDate>
+    <lastBuildDate>Sat, 11 Jun 2022 11:48:24 +0200</lastBuildDate>
     <generator>Jekyll v4.2.1</generator>
     
       <item>
-        <title></title>
+        <title>SLF4J Class path contains multiple SLF4J bindings Error</title>
         <description>&lt;h4&gt;SLF4J: Class path contains multiple SLF4J bindings&lt;/h4&gt;
 
 &lt;p&gt;서버단에서 동작하는 과정을 로그를 찍음으로써, 디버깅을 하는 경우가 종종있는데, 모듈들이 충돌해서 일어나는 오류입니다.&lt;/p&gt;
@@ -19,9 +19,11 @@
 
 &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;build.gradle&lt;/code&gt;에서 로깅하는 모듈들의 줄을 삭제하고 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;implementation &apos;org.springframework.boot:spring-boot-starter-logging:2.6.8&apos;&lt;/code&gt;를 추가하여 설치해주면 해결가능하다.&lt;/p&gt;
 </description>
-        <pubDate>Thu, 09 Jun 2022 15:28:19 +0200</pubDate>
-        <link>https://riverrevir.github.io//2022/06/09/2022-06-08-error1</link>
-        <guid isPermaLink="true">https://riverrevir.github.io//2022/06/09/2022-06-08-error1</guid>
+        <pubDate>Wed, 08 Jun 2022 00:00:00 +0200</pubDate>
+        <link>https://riverrevir.github.io//2022/06/08/error1</link>
+        <guid isPermaLink="true">https://riverrevir.github.io//2022/06/08/error1</guid>
+        
+        <category>Error</category>
         
         
       </item>

@@ -4,7 +4,7 @@
  <title>river.dev</title>
  <link href="https://riverrevir.github.io//atom.xml" rel="self"/>
  <link href="https://riverrevir.github.io//"/>
- <updated>2022-06-09T15:28:19+02:00</updated>
+ <updated>2022-06-11T11:48:24+02:00</updated>
  <id>https://riverrevir.github.io</id>
  <author>
    <name>riverrevir</name>
@@ -13,10 +13,10 @@
 
  
  <entry>
-   <title></title>
-   <link href="https://riverrevir.github.io//2022/06/09/2022-06-08-error1"/>
-   <updated>2022-06-09T15:28:19+02:00</updated>
-   <id>https://riverrevir.github.io/2022/06/09/2022-06-08-error1</id>
+   <title>SLF4J Class path contains multiple SLF4J bindings Error</title>
+   <link href="https://riverrevir.github.io//2022/06/08/error1"/>
+   <updated>2022-06-08T00:00:00+02:00</updated>
+   <id>https://riverrevir.github.io/2022/06/08/error1</id>
    <content type="html">&lt;h4&gt;SLF4J: Class path contains multiple SLF4J bindings&lt;/h4&gt;
 
 &lt;p&gt;서버단에서 동작하는 과정을 로그를 찍음으로써, 디버깅을 하는 경우가 종종있는데, 모듈들이 충돌해서 일어나는 오류입니다.&lt;/p&gt;

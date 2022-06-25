@@ -4,7 +4,7 @@
  <title>river.dev</title>
  <link href="https://riverrevir.github.io//atom.xml" rel="self"/>
  <link href="https://riverrevir.github.io//"/>
- <updated>2022-06-25T19:48:34+02:00</updated>
+ <updated>2022-06-25T19:50:44+02:00</updated>
  <id>https://riverrevir.github.io</id>
  <author>
    <name>riverrevir</name>
@@ -13,7 +13,7 @@
 
  
  <entry>
-   <title>Spring Security JWT 예외처리 ExceptionHandler</title>
+   <title>Spring Security JWT 예외처리 ExceptionHandler - 토이프로젝트(4)</title>
    <link href="https://riverrevir.github.io//2022/06/26/springboot-study9"/>
    <updated>2022-06-26T00:00:00+02:00</updated>
    <id>https://riverrevir.github.io/2022/06/26/springboot_study9</id>

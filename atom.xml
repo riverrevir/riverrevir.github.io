@@ -4,7 +4,7 @@
  <title>river.dev</title>
  <link href="https://riverrevir.github.io//atom.xml" rel="self"/>
  <link href="https://riverrevir.github.io//"/>
- <updated>2022-06-25T19:39:34+02:00</updated>
+ <updated>2022-06-25T19:48:34+02:00</updated>
  <id>https://riverrevir.github.io</id>
  <author>
    <name>riverrevir</name>
@@ -378,6 +378,15 @@
 &lt;p&gt;&lt;a href=&quot;https://github.com/riverrevir/devstudy-today/issues/17&quot;&gt;에러 발생 및 해결방안&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;이제 JWT 토큰을 가지고 어떤식으로 해야할지,, 고민을 해봐야겠다. 어플과의 통신은 JSON만 넘겨주면 될거 같았는데, 지금은 또 어떤 느낌으로 해야할지 모르겠다.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Spring boot 로그인 구현 - 토이프로젝트(2)</title>
+   <link href="https://riverrevir.github.io//2022/06/06/springboot-study7"/>
+   <updated>2022-06-06T00:00:00+02:00</updated>
+   <id>https://riverrevir.github.io/2022/06/06/springboot_study7</id>
+   <content type="html">&lt;p&gt;로그인은 아이디와 비밀번호를 입력받아 데이터베이스에 값이 일치하다면 메인페이지로 넘어가는 로직을 작성한다.&lt;/p&gt;
 </content>
  </entry>
  

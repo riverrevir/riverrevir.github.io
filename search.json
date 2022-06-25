@@ -1,6 +1,15 @@
 [
   
     {
+      "title"    : "Spring Security JWT 예외처리 ExceptionHandler",
+      "description" : "",
+      "category" : "",
+      "tags"     : "Spring",
+      "url"      : "//2022/06/26/springboot-study9",
+      "date"     : "2022-06-26 00:00:00 +0200"
+    } ,
+  
+    {
       "title"    : "SLF4J Class path contains multiple SLF4J bindings Error",
       "description" : "",
       "category" : "",

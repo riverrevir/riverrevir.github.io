@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Spring Security JWT 예외처리 ExceptionHandler
+title: Spring Security JWT 예외처리 ExceptionHandler - 토이프로젝트(4)
 comments: true
 tags: Spring
 ---

@@ -35,5 +35,5 @@ public class JwtAuthenticationEntryPoint implements AuthenticationEntryPoint, Se
 
 <h4>회고</h4>
 
-Spring Security에서의 처리 순서에 대해 생각하게 되었고, JWT 토큰 관련 문서를 좀 더 정확하게 읽어보면서 이해를 하는 것이 필요할 것 같다.
+Spring Security에서의 처리 순서에 대해 생각하게 되었고, JWT 토큰 관련 문서를 좀 더 정확하게 읽어보면서 이해를 하는 것이 필요할 것 같다. 추가로 웹페이지에서 JWT 토큰 처리 방식에 대해 내가 몇일간 삽질한 내용들을 정리하여 올릴 예정이다.
 

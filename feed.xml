@@ -5,8 +5,8 @@
     <description></description>
     <link>https://riverrevir.github.io//</link>
     <atom:link href="https://riverrevir.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 25 Jun 2022 19:50:44 +0200</pubDate>
-    <lastBuildDate>Sat, 25 Jun 2022 19:50:44 +0200</lastBuildDate>
+    <pubDate>Sun, 26 Jun 2022 18:07:26 +0200</pubDate>
+    <lastBuildDate>Sun, 26 Jun 2022 18:07:26 +0200</lastBuildDate>
     <generator>Jekyll v4.2.1</generator>
     
       <item>
@@ -36,7 +36,7 @@
 
 &lt;h4&gt;회고&lt;/h4&gt;
 
-&lt;p&gt;Spring Security에서의 처리 순서에 대해 생각하게 되었고, JWT 토큰 관련 문서를 좀 더 정확하게 읽어보면서 이해를 하는 것이 필요할 것 같다.&lt;/p&gt;
+&lt;p&gt;Spring Security에서의 처리 순서에 대해 생각하게 되었고, JWT 토큰 관련 문서를 좀 더 정확하게 읽어보면서 이해를 하는 것이 필요할 것 같다. 추가로 웹페이지에서 JWT 토큰 처리 방식에 대해 내가 몇일간 삽질한 내용들을 정리하여 올릴 예정이다.&lt;/p&gt;
 
 </description>
         <pubDate>Sun, 26 Jun 2022 00:00:00 +0200</pubDate>

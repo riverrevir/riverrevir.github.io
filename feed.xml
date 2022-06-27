@@ -5,9 +5,106 @@
     <description></description>
     <link>https://riverrevir.github.io//</link>
     <atom:link href="https://riverrevir.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 26 Jun 2022 22:03:08 +0200</pubDate>
-    <lastBuildDate>Sun, 26 Jun 2022 22:03:08 +0200</lastBuildDate>
+    <pubDate>Mon, 27 Jun 2022 23:09:04 +0200</pubDate>
+    <lastBuildDate>Mon, 27 Jun 2022 23:09:04 +0200</lastBuildDate>
     <generator>Jekyll v4.2.1</generator>
+    
+      <item>
+        <title>Spring Boot의 입문 강의 정리</title>
+        <description>&lt;h4&gt;테스트 케이스 작성&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;테스트 코드 작성 후 실행하면 실행 의존성은 절대 없어야 한다.&lt;/li&gt;
+  &lt;li&gt;테스트에서는 절대로 보장해주지 않는다. 그렇다면 레포지토리에 데이터가 담겨 있다면, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;AfterEach&lt;/code&gt; 애노테이션을 사용할 수 있다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nd&quot;&gt;@AfterEach&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;afterEach&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(){&lt;/span&gt;
+	&lt;span class=&quot;n&quot;&gt;repository&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;clearStore&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;저장소에 담겨있는 데이터를 테스트 하나가 끝날 때 마다 비워준다.&lt;/li&gt;
+  &lt;li&gt;테스트 주도 개발 TDD
+    &lt;ul&gt;
+      &lt;li&gt;어떤 기능을 만들어야 하는데 기능에 대해서 먼저 검증을 해보기 위해서 테스트 코드를 먼저 작성하는 방법이다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;테스트 코드가 없이 개발 하는 것은 정말 힘든 일이다. 깊이 있는 공부가 필요로 하다.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Ctrl+Shift+T&lt;/code&gt; 테스트 코드의 껍대기를 작성해주므로 편리한 기능을 사용할 수 있다.&lt;/li&gt;
+  &lt;li&gt;테스트 코드는 과감하게 한글로 작성해도 된다.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;무언가가 주어질 때(given) → 이 기능을 실행했을 때(when) → 이 결과가 나와야 한다(then)&lt;/strong&gt; 처음 테스트 케이스를 작성할 때는 주석을 달아서 이러한 형태의 로직대로 테스트를 작성하여 익숙해지도록 하자.&lt;/li&gt;
+  &lt;li&gt;단순히 기능이 동작 하는지만 테스트 하는 것보다는 예외상황을 생각하였을 때 예외가 발생하지 않고 그대로 로직이 수행된다면 그 기능은 제대로 만들지 못한 것이다. 테스트 코드안에 예외가 발생되도록 작성한 다음 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;fail()&lt;/code&gt; 을 사용하여 예외가 정확하게 발생하는지 알 수 있다. 즉 자신이 예외를 생각하여 로직을 작성하였어도 예외가 발생하지 않는 경우를 테스트 해볼 수 있는 것이다.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;@SpringBootTest&lt;/code&gt; 스프링부트테스트 애노테이션은 스프링 컨테이너와 테스트를 진행한다.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;@Transactional&lt;/code&gt;   트랜잭셔널 애노테이션은 데이터베이스에 기입 된 내용들을 롤백 시켜준다.&lt;/li&gt;
+  &lt;li&gt;테스트는 필드 주입으로도 많이 사용한다.&lt;/li&gt;
+  &lt;li&gt;가급적이면 스프링 컨테이너 없이 단위 테스트를 만드는게 좋다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4&gt;서비스&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;레포지토리의 네이밍은 단순히 기계적으로 한눈에 알아볼 수 있도록 작성한다.&lt;/li&gt;
+  &lt;li&gt;서비스에서는 비즈니스에 의존적으로 설계를 하여 네이밍을 한다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4&gt;스프링 빈 등록&lt;/h4&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;컴포넌트 스캔과 자동 의존관계 설정&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;스프링 컨테이너에 등록된 컨트롤러를 서비스와 연결 시켜준다 → 의존성 주입(DI)&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;ul&gt;
+      &lt;li&gt;생성자 주입&lt;/li&gt;
+      &lt;li&gt;필드 주입&lt;/li&gt;
+      &lt;li&gt;setter 주입
+    - 의존관계가 실행중에 동적으로 변하는 경우는 없으므로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;생성자 주입&lt;/code&gt; 을 사용한다.
+    - &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;@Controller, @Service, @Repository&lt;/code&gt; 애노테이션을 달아주면 스프링이 컨테이너에 등록해준다. 여기에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;AutoWired&lt;/code&gt; 를 사용하면 연관 관계를 지어준다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;자바 코드로 직접 스프링 빈 등록하기&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;@Bean&lt;/code&gt; 을 사용하여 직접 스프링 컨테이너에 올릴 수 있다.&lt;/li&gt;
+      &lt;li&gt;Controller는 직접 등록하는 것 보다는 애노테이션을 사용하도록 하자.&lt;/li&gt;
+      &lt;li&gt;정형화 되어 있지 않거나, 상황에 따라 구현 클래스를 변경해야 할 때 사용한다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4&gt;간단하게 살펴보기&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;개방-폐쇄 원칙(OCP)&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;JdbcTemplate&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;JPA&lt;/li&gt;
+  &lt;li&gt;AOP(Aspect Oriented Programming)
+    &lt;ul&gt;
+      &lt;li&gt;모든 메소드의 호출 시간을 측정하고 싶을 때&lt;/li&gt;
+      &lt;li&gt;공통 관심 사항, 핵심 관심 사항&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;원하는 곳에 공통 관심 사항 적용&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;@Aspect&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;@Around(&quot;execution(*패키지))&quot;&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;어디서 병목이 있는지 등을 확인가능하다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4&gt;회고&lt;/h4&gt;
+
+&lt;p&gt;김영한 님의 Spring Boot 기초 강의를 듣고 정리하였습니다. 앞부분의 MVC 패턴에 대해서는 자세하게 정리 해보려고 합니다. 스프링 부트에 대해 입문하기 좋은 강의라고 생각합니다. 우선 자바의 정석을 완독하면서 인강을 계속해서 들을 예정입니다.&lt;/p&gt;
+</description>
+        <pubDate>Mon, 27 Jun 2022 00:00:00 +0200</pubDate>
+        <link>https://riverrevir.github.io//2022/06/27/springboot-lecture1</link>
+        <guid isPermaLink="true">https://riverrevir.github.io//2022/06/27/springboot-lecture1</guid>
+        
+        <category>Lecture</category>
+        
+        
+      </item>
     
       <item>
         <title>Spring Security JWT 예외처리 ExceptionHandler - 토이프로젝트(4)</title>
@@ -3151,64 +3248,6 @@ Object 클래스에서 모든 클래스를 파생한다.&lt;/li&gt;
         <guid isPermaLink="true">https://riverrevir.github.io//2022/03/17/js-study1</guid>
         
         <category>Javascript</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>다익스트라(Dijkstra) 알고리즘 추천 문제</title>
-        <description>&lt;h4&gt;다익스트라&lt;/h4&gt;
-
-&lt;p&gt;bfs,dfs는 가중치가 있을 때 최단거리를 표현하기 어려운데, 다익스트라 알고리즘을 사용하면 가능하다. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;하나의 정점&lt;/code&gt;에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;모든 정점&lt;/code&gt;까지의 최단거리를 각각 구해주는 알고리즘이다. 즉 최단 경로 탐색 알고리즘으로써 플로이드 와샬은 음의 간석을 표현할 수 있지만 다익스트라는 불가능하다.&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;시작노드&lt;/code&gt; 와 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;도착노드&lt;/code&gt; 사이의 최단거리를 찾을 때 유용하게 사용된다.&lt;/p&gt;
-
-&lt;p&gt;너비우선탐색인 bfs를 기본으로 한다.&lt;/p&gt;
-
-&lt;h4&gt;동작과정&lt;/h4&gt;
-
-&lt;p&gt;초기에 시작할 정점을 정해서 인접한 간선 들을 배열에 저장하고 갈 수 없는 간선은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;INF&lt;/code&gt; 로 초기화 한다. 이후에 초기 시작 정점에서 가장 작은 비용을 선택하여 또 다시 배열을 인접한 부분과 이전의 값과 비교하여 최단거리를 계속해서 갱신해나간다.&lt;/p&gt;
-
-&lt;h4&gt;시간 복잡도&lt;/h4&gt;
-
-&lt;table&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;우선 순위 큐&lt;/code&gt; 를 사용하지 않으면 O(&lt;/td&gt;
-      &lt;td&gt;V&lt;/td&gt;
-      &lt;td&gt;^{2})이지만 우선 순위 큐에 기반한 알고리즘은 O(&lt;/td&gt;
-      &lt;td&gt;E&lt;/td&gt;
-      &lt;td&gt;+&lt;/td&gt;
-      &lt;td&gt;V&lt;/td&gt;
-      &lt;td&gt;\log&lt;/td&gt;
-      &lt;td&gt;V&lt;/td&gt;
-      &lt;td&gt;)로 최단 경로 알고리즘 중 점근적으로 가장 빠른 알고리즘이다.&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h4&gt;추천 문제&lt;/h4&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/1753&quot;&gt;백준 1753번 - 최단경로&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/1504&quot;&gt;백준 1504번 - 특정한 최단 경로&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/1446&quot;&gt;백준 1446번 - 지름길&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/1916&quot;&gt;백준 1916번 - 최소비용 구하기&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/5972&quot;&gt;백준 5972번 - 택배 배송&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/17396&quot;&gt;백준 17396번 - 백도어&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/1238&quot;&gt;백준 1238번 - 파티&lt;/a&gt;&lt;/p&gt;
-
-</description>
-        <pubDate>Thu, 17 Mar 2022 00:00:00 +0100</pubDate>
-        <link>https://riverrevir.github.io//2022/03/17/dijkstra</link>
-        <guid isPermaLink="true">https://riverrevir.github.io//2022/03/17/dijkstra</guid>
-        
-        <category>Algorithm</category>
         
         
       </item>

@@ -4,6 +4,22 @@
         xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     
     <url>
+        <loc>https://riverrevir.github.io/2022/07/01/springboot-lecture2.html</loc>
+        
+        <lastmod>2022-07-01T00:00:00+02:00</lastmod>
+        
+
+        
+        <changefreq>weekly</changefreq>
+        
+
+        
+        <priority>0.5</priority>
+        
+
+    </url>
+    
+    <url>
         <loc>https://riverrevir.github.io/2022/06/27/springboot-lecture1.html</loc>
         
         <lastmod>2022-06-27T00:00:00+02:00</lastmod>

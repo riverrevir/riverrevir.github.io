@@ -1,6 +1,15 @@
 [
   
     {
+      "title"    : "Spring Boot - 객체 지향 설계와 스프링",
+      "description" : "",
+      "category" : "",
+      "tags"     : "Lecture",
+      "url"      : "//2022/07/01/springboot-lecture2",
+      "date"     : "2022-07-01 00:00:00 +0200"
+    } ,
+  
+    {
       "title"    : "Spring Boot의 입문 강의 정리",
       "description" : "",
       "category" : "",

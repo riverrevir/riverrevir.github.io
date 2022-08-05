@@ -1,6 +1,15 @@
 [
   
     {
+      "title"    : "Spring Security CORS 해결",
+      "description" : "",
+      "category" : "",
+      "tags"     : "Spring",
+      "url"      : "//2022/08/05/springboot-study10",
+      "date"     : "2022-08-05 00:00:00 +0200"
+    } ,
+  
+    {
       "title"    : "Spring Boot - 객체 지향 설계와 스프링",
       "description" : "",
       "category" : "",

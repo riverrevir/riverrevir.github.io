@@ -2,7 +2,7 @@
 layout: post
 title: Project gallendar - 조회 성능에 대한 고찰
 comments: true
-tags: Project
+tags: project
 ---
 
 

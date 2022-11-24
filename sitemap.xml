@@ -4,6 +4,22 @@
         xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     
     <url>
+        <loc>https://riverrevir.github.io/2022/11/25/project-gallendar01.html</loc>
+        
+        <lastmod>2022-11-25T00:00:00+01:00</lastmod>
+        
+
+        
+        <changefreq>weekly</changefreq>
+        
+
+        
+        <priority>0.5</priority>
+        
+
+    </url>
+    
+    <url>
         <loc>https://riverrevir.github.io/2022/08/05/springboot-study10.html</loc>
         
         <lastmod>2022-08-05T00:00:00+02:00</lastmod>

@@ -5,9 +5,62 @@
     <description></description>
     <link>https://riverrevir.github.io//</link>
     <atom:link href="https://riverrevir.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 05 Aug 2022 03:56:15 +0200</pubDate>
-    <lastBuildDate>Fri, 05 Aug 2022 03:56:15 +0200</lastBuildDate>
+    <pubDate>Thu, 24 Nov 2022 19:56:43 +0100</pubDate>
+    <lastBuildDate>Thu, 24 Nov 2022 19:56:43 +0100</lastBuildDate>
     <generator>Jekyll v4.2.1</generator>
+    
+      <item>
+        <title>Project gallendar - 조회 성능에 대한 고찰</title>
+        <description>&lt;h4&gt;로직&lt;/h4&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;게시글을 작성하고 나의 게시글을 공유하기 위해서는 태그를 할 유저의 아이디를 검색해서 태그를 해야한다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;조회의 성능에 대한 고민을 많이하였다. 
+데이터베이스의 CRUD 작업 중 &lt;strong&gt;R이 대부분을 차지&lt;/strong&gt;하기에, 조회에 대한 성능을 어떻게 하면 좋게 만들 수 있을까에 대한 고민을 많이 했던 것 같다.
+조회의 성능을 올리기 위해서 우선적으로 검색을 해보았던게 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;엘라스틱 서치&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;캐싱&lt;/code&gt; 등이 있는 것 같다.&lt;/p&gt;
+
+&lt;h4&gt;엘라스틱 서치&lt;/h4&gt;
+
+&lt;p&gt;엘라스틱 서치는 빠르게 검색하기 위해 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;NoSQL&lt;/code&gt; 을 많이 사용한다.
+이는 오픈소스 검색엔진으로 루씬을 기반으로 만들어졌다.
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Full Text&lt;/code&gt;를 지원하여, 기존의 데이터베이스는 기본 쿼리와 색인 구조의 한계로 기본적인 텍스트 검색만 가능하지만 고차원적인 전문 검색이 가능하도록 한다. 이는 내용 전체를 색인해서 특정 단어가 포함된 문서를 검색하는 것을 의미한다.&lt;/p&gt;
+
+&lt;p&gt;여러모로 많은 장점들이 있고 빅데이터를 공부하는 사람들이라면 엘라스틱 서치는 많이 접해보셨을 것이다.
+하지만 이 프로젝트의 특성상 단순히 쿼리문의 최적화와 데이터베이스의 설계를 통해서도 충분히 개선이 가능할 것 같아 엘라스틱 서치의 도입을 포기하였다. 또한 현재 구현하려는 로직을 엘라스틱 서치를 적용한다면, 우선 적절한 기술이 아니라고 생각하였다.&lt;/p&gt;
+
+&lt;p&gt;엘라스틱 서치는 SQL 데이터베이스보다 개별 레코드 검색을 수행하는 능력이 떨어지며, 특히 데이터를 업데이트 할 때는 성능이 크게 떨어진다.
+만약 자주 정보를 업데이트 해야 하는 애플리케이션이라면 엘라스틱 서치는 적절한 기술이 아니라 판단(회원 가입이 계속해서 이루어질 것으로 생각하였다.)&lt;/p&gt;
+
+&lt;h4&gt;QueryDsl&lt;/h4&gt;
+
+&lt;p&gt;조회의 성능을 올리기 위해서, SQL문을 잘 작성하여야 했다. 직접 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;@Query&lt;/code&gt;를 이용하여 커스텀 해도 되지만, 추후에 조건에 맞는 동적인 쿼리문을 작성하기 위해서는 Querydsl을 통해서 다이나믹 쿼리로 구현할 수 있다는 것을 알게되었고, 기존 SQL문에서의 ROW의 줄과 Querydsl을 적용하여 fetch join을 한 ROW와 비교하였을 때 엄청난 개선이 된다는 점을 인지하여 적용해보려 한다.&lt;/p&gt;
+
+&lt;p&gt;Querydsl을 사용하면서 많은 편한점들이 있었다. 코드로 쿼리를 작성하여서 컴파일 문법 오류를 한눈에 알 수 있었고 IDE의 도움을 크게 받을 수 있었다. 또한 동적인 조건이 들어왔을 때 코드의 개선과 명확한 쿼리문이 보인다는게 큰 편리함인 것 같다.&lt;/p&gt;
+
+&lt;p&gt;자세한 queryDsl의 적용방법은 추후 새로운 포스팅을 통해서 안내하도록 하겠습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://querydsl.com/static/querydsl/4.0.1/reference/ko-KR/html_single/&quot;&gt;Querydsl 공식문서&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4&gt;캐싱&lt;/h4&gt;
+
+&lt;p&gt;앞서 말했듯이 데이터베이스의 대부분이 R이 많다고 하였다. 이는 계속해서 조회 요청을 하면 트래픽이 방대해질 수 밖에 없다. 이런 트래픽이 쌓이고 쌓이면 비용적인 부분도 분명 문제가 있다.
+이를 해결하기 위해 데이터베이스 클러스터로 구성하거나 캐싱 기능을 도입하여 이미 조회가된 게시글에 대해서는 캐시로 관리하여 빠른 접근이 가능하도록 하며 비용적인 부분도 해결할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;하지만 민감한 데이터 즉 대부분의 웹페이지에서의 데이터베이스 해킹사례는 전부 캐싱에서부터 이루어진다. 따라서 민감한 데이터라고 생각되는 것들은 캐시로 관리하여서는 안된다.&lt;/p&gt;
+
+&lt;p&gt;아직 데이터베이스의 아키텍처 설계를 하지는 못하였지만, 트래픽에 대한 고민도 해보았고 이에대한 여러가지 기술들이 있다는거에 많은 배움을 느낀다.&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 25 Nov 2022 00:00:00 +0100</pubDate>
+        <link>https://riverrevir.github.io//2022/11/25/project-gallendar01</link>
+        <guid isPermaLink="true">https://riverrevir.github.io//2022/11/25/project-gallendar01</guid>
+        
+        <category>Project</category>
+        
+        
+      </item>
     
       <item>
         <title>Spring Security CORS 해결</title>
@@ -3151,105 +3204,6 @@ Object 클래스에서 모든 클래스를 파생한다.&lt;/li&gt;
         <pubDate>Tue, 22 Mar 2022 00:00:00 +0100</pubDate>
         <link>https://riverrevir.github.io//2022/03/22/js-study4</link>
         <guid isPermaLink="true">https://riverrevir.github.io//2022/03/22/js-study4</guid>
-        
-        <category>Javascript</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>자바스크립트에서의 타입 변환과 단축 평가</title>
-        <description>&lt;h4&gt;암묵적 타입 변환&lt;/h4&gt;
-
-&lt;p&gt;개발자의 의도와 상관없이 코드의 문맥을 고려해서 자바스크립트 엔진에 의해 암묵적으로 타입이 변경된다.&lt;/p&gt;
-
-&lt;h6&gt;문자열 타입으로 변환&lt;/h6&gt;
-
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//&apos;12&apos;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;피연산자가 하나라도 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;문자열&lt;/code&gt;이 있다면 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;+&lt;/code&gt; 연산자는 문자열을 연결 연산자로 사용하게 된다. 그러므로 저 예제의 경우 문맥상 모두 문자열 타입으로 타입이 변환되어 ‘12’의 문자열 결과값을 나타낸다.&lt;/p&gt;
-
-&lt;h6&gt;숫자 타입으로 변환&lt;/h6&gt;
-
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//-1&lt;/span&gt;
-&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//10&lt;/span&gt;
-&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;one&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//NaN&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;산술 연산자의 피연산자는 모두 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;숫자&lt;/code&gt; 타입으로 변경된다. 만약 산술 연산을 진행할 수 없다면 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;NaN&lt;/code&gt;이 된다.&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;+&lt;/code&gt;단항 연산자는 피연산자가 숫자가 아니면 숫자로 암묵적으로 변환한다.&lt;/p&gt;
-
-&lt;h6&gt;불리언 타입으로 변환&lt;/h6&gt;
-
-&lt;ul&gt;
-&lt;li&gt;false&lt;/li&gt;
-&lt;li&gt;undefined&lt;/li&gt;
-&lt;li&gt;null&lt;/li&gt;
-&lt;li&gt;0,-0&lt;/li&gt;
-&lt;li&gt;NaN&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;위의 5가지를 제외한 나머지는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;true&lt;/code&gt;의 의미로 암묵적으로 변환된다.&lt;/p&gt;
-
-&lt;h4&gt;명시적 타입 변환&lt;/h4&gt;
-&lt;p&gt;개발자의 의도에 따라 명시적으로 타입을 변경한다.&lt;/p&gt;
-
-&lt;h6&gt;문자열 타입으로 변환&lt;/h6&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;String 생성자 이용&lt;/li&gt;
-  &lt;li&gt;toString 메서드 사용&lt;/li&gt;
-  &lt;li&gt;문자열 연결 연산자 사용&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h6&gt;숫자 타입으로 변환&lt;/h6&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Number 생성자 이용&lt;/li&gt;
-  &lt;li&gt;parseInt, parseFloat 사용&lt;/li&gt;
-  &lt;li&gt;+단항 산술 연산자 사용&lt;/li&gt;
-  &lt;li&gt;*산술 연산자 사용&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h6&gt;불리언 타입으로 변환&lt;/h6&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Boolean 생성자 이용&lt;/li&gt;
-  &lt;li&gt;!! 사용&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h4&gt;옵셔널 체이닝 연산자&lt;/h4&gt;
-
-&lt;p&gt;ES11에서 도입된 옵셔널 체이닝 연산자 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;?.&lt;/code&gt;은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;좌항의 피연산자가 NULL 또는 undefined인 경우 undefined&lt;/code&gt;를 반환하고 그렇지 않으면 우항의 프로퍼티 참조를 이어간다.&lt;/p&gt;
-
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;elem&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;elem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// undefined&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;이는 객체를 가리키는 변수가 null 또는 undefined인지 확인하고 프로퍼티를 참조할 때 유용하다. 즉 단축평가에서 사용된 이 문장과 똑같다.&lt;/p&gt;
-
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;elem&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;elem&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;elem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// undefined&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h4&gt;null 병합 연산자&lt;/h4&gt;
-
-&lt;p&gt;ES11에서 도입된 null 병합 연산자 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;??&lt;/code&gt;는 좌항의 피연산자가 null 또는 undefined인 경우 우항의 피연산자를 반환하고, 그렇지 않으면 좌항의 피연산자를 반환한다. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;변수에 기본값을 설정할 때 유용&lt;/code&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;foo&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;default string&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// &apos;default string&apos;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-</description>
-        <pubDate>Sun, 20 Mar 2022 00:00:00 +0100</pubDate>
-        <link>https://riverrevir.github.io//2022/03/20/js-study3</link>
-        <guid isPermaLink="true">https://riverrevir.github.io//2022/03/20/js-study3</guid>
         
         <category>Javascript</category>
         

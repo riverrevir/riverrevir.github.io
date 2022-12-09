@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Project gallendar - Members refactor
+title: Project gallendar - refactor
 comments: true
 tags: project
 ---

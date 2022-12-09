@@ -5,9 +5,118 @@
     <description></description>
     <link>https://riverrevir.github.io//</link>
     <atom:link href="https://riverrevir.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 25 Nov 2022 00:48:00 +0100</pubDate>
-    <lastBuildDate>Fri, 25 Nov 2022 00:48:00 +0100</lastBuildDate>
+    <pubDate>Fri, 09 Dec 2022 17:42:24 +0100</pubDate>
+    <lastBuildDate>Fri, 09 Dec 2022 17:42:24 +0100</lastBuildDate>
     <generator>Jekyll v4.2.1</generator>
+    
+      <item>
+        <title>Project gallendar - Members refactor</title>
+        <description>&lt;h4&gt; Members entity 리팩토링 &lt;/h4&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nd&quot;&gt;@Entity&lt;/span&gt;
+&lt;span class=&quot;nd&quot;&gt;@Getter&lt;/span&gt;
+&lt;span class=&quot;nd&quot;&gt;@NoArgsConstructor&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;우선 프로젝트에서 사용한 애너테이션이다. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;@Setter&lt;/code&gt;는 객체가 언제든지 변경될 수 있는 위험이 있어 안정성을 보장할 수 없습니다. 따라서 의미있는 메서드를 사용하여 데이터의 값이 변경이 필요로 할 때 사용할 수 있도록 설계하였습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;@NoArgsConstructor&lt;/code&gt; 은 파라미터가 없는 생성자를 자동으로 생성해주는 애너테이션 입니다. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;(access = AccessLevel.PROTECTED)&lt;/code&gt;로 변경한다면 의미 없는 객체의 생성을 막을 수 있습니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nc&quot;&gt;Members&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;members&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Members&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// error&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;의미가 담긴 객체를 생성하기 위해서는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;@Builder&lt;/code&gt; 를 사용할 수 있습니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;nd&quot;&gt;@Builder&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Members&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;email&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;MemberRole&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;role&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;email&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;email&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;password&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;role&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;role&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4&gt; Members Controller 리팩토링 &lt;/h4&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nd&quot;&gt;@GetMapping&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;MemberSearchResponse&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;searchMemberById&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;@RequestParam&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;value&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;separatorKey&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nd&quot;&gt;@NotBlank&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;memberSearchService&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;MemberSearchById&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;RequestParm vs PathVariable&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;리팩토링 하기 전에는 RequestParam과 PathVariable의 차이를 단순히 ?와 /로 구분하는 정도로 알고 있었지 이를 어떨 때 마다 구분을 해서 사용하는지에 대한 이해도가 깊지 않았습니다. 하지만 이번 리팩토링을 하면서 명확하게 구분하고자 공부를 하였습니다.&lt;/p&gt;
+
+&lt;p&gt;우선 공부한 내용은 RequestParam은 자원 안에 정렬된 값을 뽑으려고 할 때 사용한다면 PathVariable은 자원에 대한 응답을 줄 때 사용하는 것으로 이해하였다.&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;/members/id
+/members/id?sex=man
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;@RequestParam(value = “separatorKey”)&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;원래는 value 값에 id라는 값을 명시하였습니다. 하지만 이는 API 문서를 보았을 때 어떤 id 값인지, 역할을 하는게 뭔지에 대한 명확성이 없었습니다.&lt;/p&gt;
+
+&lt;p&gt;해당 separatorKey값에 따라 결과를 도출 해준다의 의미가 좀 더 명확한 것 같아 수정하였습니다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;응답 개선&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;기존에는 어글리한 response를 클라이언트에 주었습니다. 이는 어떠한 상황에서의 오류인지 클라이언트 입장에서 제대로 알 수 없었습니다.&lt;/p&gt;
+
+&lt;p&gt;팀에 따라 응답을 어떻게 줄지에 대한 룰을 정하고 그에 따라 하면될 것 같습니다. 필자는 전역으로 공통 Exception을 처리를 하였습니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;enum&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ErrorCode&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;cm&quot;&gt;/* 400 BAD_REQUEST : 잘못된 요청 */&lt;/span&gt;
+    &lt;span class=&quot;no&quot;&gt;INVALID_REFRESH_TOKEN&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;BAD_REQUEST&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;리프레시 토큰이 유효하지 않습니다&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;),&lt;/span&gt;
+    &lt;span class=&quot;no&quot;&gt;MISMATCH_REFRESH_TOKEN&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;BAD_REQUEST&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;리프레시 토큰의 유저 정보가 일치하지 않습니다&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;),&lt;/span&gt;
+
+    &lt;span class=&quot;cm&quot;&gt;/* 401 UNAUTHORIZED : 인증되지 않은 사용자 */&lt;/span&gt;
+    &lt;span class=&quot;no&quot;&gt;INVALID_AUTH_TOKEN&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;UNAUTHORIZED&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;권한 정보가 없는 토큰입니다&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;),&lt;/span&gt;
+    &lt;span class=&quot;no&quot;&gt;UNAUTHORIZED_MEMBER&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;UNAUTHORIZED&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;현재 내 계정 정보가 존재하지 않습니다&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;),&lt;/span&gt;
+
+    &lt;span class=&quot;cm&quot;&gt;/* 404 NOT_FOUND : Resource 를 찾을 수 없음 */&lt;/span&gt;
+    &lt;span class=&quot;no&quot;&gt;MEMBER_NOT_FOUND&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;NOT_FOUND&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;해당 유저 정보를 찾을 수 없습니다&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;),&lt;/span&gt;
+    &lt;span class=&quot;no&quot;&gt;REFRESH_TOKEN_NOT_FOUND&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;NOT_FOUND&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;로그아웃 된 사용자입니다&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;),&lt;/span&gt;
+
+    &lt;span class=&quot;cm&quot;&gt;/* 409 CONFLICT : Resource 의 현재 상태와 충돌. 보통 중복된 데이터 존재 */&lt;/span&gt;
+    &lt;span class=&quot;no&quot;&gt;DUPLICATE_RESOURCE&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;CONFLICT&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;데이터가 이미 존재합니다&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;),&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;final&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;HttpStatus&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;httpStatus&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;final&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;detail&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ResponseStatusException&lt;/code&gt;과 비슷해 보이지만, 전역으로 공통 Exception을 처리하는 것과 가장 큰 차이점은 커스텀을 할 수 있다는 차이가 있습니다. 따라서 재사용성이 높은 에러 응답 코드를 관리할 수 있습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;@ControllerAdvice&lt;/code&gt;는 프로젝트 전역에서 발생하는 모든 예외를 잡아줍니다. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;@ExceptionHandler&lt;/code&gt; 는 발생한 특정 예외를 잡아서 하나의 메소드에서 공통 처리해줄 수 있게 해줍니다.&lt;/p&gt;
+
+&lt;p&gt;잘못된 요청이 클라이언트에서 왔을 시 좀 더 정리된 응답을 주면 클라이언트 입장에서도 편할 것이다. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;@Valid&lt;/code&gt;의 예외는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;MethodArgumentNotValidException&lt;/code&gt;을 발생시켜 GlobalExceptionHandler에 이런식으로 추가해주었다. 그렇다면 내가 설정한 예외처리를 응답결과로 보내줄 수 있다.&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nd&quot;&gt;@ExceptionHandler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;MethodArgumentNotValidException&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ResponseEntity&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;ErrorResponse&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;handleMethodArgumentNotValidException&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;MethodArgumentNotValidException&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;handleValidException throw Exception : {}&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;INVALID_INPUT_VALUE&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ErrorResponse&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;toResponseEntity&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;INVALID_INPUT_VALUE&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4&gt;회고&lt;/h4&gt;
+
+&lt;p&gt;유효한 요청인지에 대한 검증은 클라이언트 측에서도 하겠지만, 백엔드에서도 해야함을 느껴서 검증부분을 추가하였습니다. 또한 응답 개선을 통해 모호한 서버에러를 주는 것 보다 명확한 에러에 대한 정보를 준다면 오류를 찾기도 한층 수월해질 것입니다. 아직 객체지향적에 대한 패턴의 공부를 하지 못하여 제대로 된 리팩토링을 하진 못하였지만, 리팩토링을 하면서 많은 것들에 대한 생각을 할 수 있어서 좋았습니다.&lt;/p&gt;
+</description>
+        <pubDate>Thu, 08 Dec 2022 00:00:00 +0100</pubDate>
+        <link>https://riverrevir.github.io//2022/12/08/project-gallendar03</link>
+        <guid isPermaLink="true">https://riverrevir.github.io//2022/12/08/project-gallendar03</guid>
+        
+        <category>project</category>
+        
+        
+      </item>
     
       <item>
         <title>Project gallendar - 조회 성능에 대한 고찰</title>
@@ -3154,58 +3263,6 @@ Object 클래스에서 모든 클래스를 파생한다.&lt;/li&gt;
         <guid isPermaLink="true">https://riverrevir.github.io//2022/03/23/unionfind</guid>
         
         <category>Algorithm</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>자바스크립트에서의 객체 리터럴</title>
-        <description>&lt;h4&gt;객체&lt;/h4&gt;
-
-&lt;p&gt;자바스크립트는 객체 기반의 프로그래밍 언어이다. 원시 값을 제외한 나머지 값은 모두 객체이다. 객체는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;변경 가능한 값&lt;/code&gt;이다. 0개 이상의 프로퍼티로 구성되어 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;키&lt;/code&gt;와 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;값&lt;/code&gt;으로 구성된다.&lt;/p&gt;
-
-&lt;p&gt;자바스크립트의 객체는 일급 객체로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;함수&lt;/code&gt;도 프로퍼티 값으로 사용할 수 있다. 이를 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;메서드&lt;/code&gt;라고 부른다.&lt;/p&gt;
-
-&lt;p&gt;먼저 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;리터럴&lt;/code&gt;이란 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;데이터를 표현하는 방식&lt;/code&gt;이라고 생각하면 된다. 즉 변수를 선언함과 동시에 그 값을 지정해주는 표기법을 말하는데, 이를 객체를 선언할 때 사용할 수 있다. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;{}&lt;/code&gt;중괄호 내에 0개 이상의 프로퍼티를 정의한다.&lt;/p&gt;
-
-&lt;h6&gt;프로퍼티&lt;/h6&gt;
-
-&lt;p&gt;객체는 프로퍼티의 집합이며, 프로퍼티는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;키&lt;/code&gt;와 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;값&lt;/code&gt;으로 구성된다. 프로퍼티를 나열할 때 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;,&lt;/code&gt;로 구분한다. 키의 값은 암묵적으로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;문자열&lt;/code&gt;이 된다.&lt;/p&gt;
-
-&lt;p&gt;프로퍼티에 접근하는 방법에는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;마침표 표기법&lt;/code&gt;과 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;대괄호 표기법&lt;/code&gt;이 있다.&lt;/p&gt;
-
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;LEE&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-
-&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;마침표 표기법의 경우 키의 값을 반드시 따음표로 감싼 문자열이여야 하고 객체에 존재하지 않는 프로퍼티에 접근하면 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;undefined&lt;/code&gt;를 반환하니 주의해야한다.&lt;/p&gt;
-
-&lt;p&gt;존재하지 않는 프로퍼티에 값을 할당하면 동적으로 생성되고 프로퍼티 값이 할당된다.&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;delete&lt;/code&gt;연산자를 통해 프로퍼티를 삭제할 수 있다.&lt;/p&gt;
-
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;delete&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;ES6에서 추가된 객체 리터럴의 확장 기능 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;프로퍼티 키와 변수 이름이 같은 경우&lt;/code&gt; 프로퍼티 키를 생략할 수 있다.&lt;/p&gt;
-
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;obj&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;obj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//{x:1, y:2}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;또한 메서드 축약 표현으로 function 키워드를 생략할 수 있다.&lt;/p&gt;
-</description>
-        <pubDate>Tue, 22 Mar 2022 00:00:00 +0100</pubDate>
-        <link>https://riverrevir.github.io//2022/03/22/js-study4</link>
-        <guid isPermaLink="true">https://riverrevir.github.io//2022/03/22/js-study4</guid>
-        
-        <category>Javascript</category>
         
         
       </item>

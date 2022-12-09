@@ -43,7 +43,7 @@ Members members=new Members(); // error
 ```
 
 
-1. **RequestParm vs PathVariable**
+**RequestParm vs PathVariable**
 
 리팩토링 하기 전에는 RequestParam과 PathVariable의 차이를 단순히 ?와 /로 구분하는 정도로 알고 있었지 이를 어떨 때 마다 구분을 해서 사용하는지에 대한 이해도가 깊지 않았습니다. 하지만 이번 리팩토링을 하면서 명확하게 구분하고자 공부를 하였습니다.
 
@@ -53,13 +53,13 @@ Members members=new Members(); // error
 /members/id?sex=man
 ```
 
-2. **@RequestParam(value = "separatorKey")**
+ **@RequestParam(value = "separatorKey")**
 
 원래는 value 값에 id라는 값을 명시하였습니다. 하지만 이는 API 문서를 보았을 때 어떤 id 값인지, 역할을 하는게 뭔지에 대한 명확성이 없었습니다. 
 
 해당 separatorKey값에 따라 결과를 도출 해준다의 의미가 좀 더 명확한 것 같아 수정하였습니다.
 
-3. **응답 개선**
+**응답 개선**
 
 기존에는 어글리한 response를 클라이언트에 주었습니다. 이는 어떠한 상황에서의 오류인지 클라이언트 입장에서 제대로 알 수 없었습니다. 
 

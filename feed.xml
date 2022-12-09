@@ -5,12 +5,12 @@
     <description></description>
     <link>https://riverrevir.github.io//</link>
     <atom:link href="https://riverrevir.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 09 Dec 2022 18:01:59 +0100</pubDate>
-    <lastBuildDate>Fri, 09 Dec 2022 18:01:59 +0100</lastBuildDate>
+    <pubDate>Fri, 09 Dec 2022 18:36:05 +0100</pubDate>
+    <lastBuildDate>Fri, 09 Dec 2022 18:36:05 +0100</lastBuildDate>
     <generator>Jekyll v4.2.1</generator>
     
       <item>
-        <title>Project gallendar - Members refactor</title>
+        <title>Project gallendar - refactor</title>
         <description>&lt;h4&gt; Members entity 리팩토링 &lt;/h4&gt;
 
 &lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nd&quot;&gt;@Entity&lt;/span&gt;

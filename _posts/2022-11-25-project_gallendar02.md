@@ -8,6 +8,7 @@ tags: project
 <h4>오류 내용</h4>
 
 **SMTP ERROR**
+
 `Failed message 1: com.sun.mail.smtp.SMTPSendFailedException: 530 5.7.0 Must issue`
 
 gardle의 yml 파일 setting의 오류로써 gradle을 사용하시는 분들은 아래 부분을 참고하여 yml setting을 해주셔야 오류가 나지 않습니다.
@@ -31,6 +32,7 @@ gardle의 yml 파일 setting의 오류로써 gradle을 사용하시는 분들은
 ```
 
 **젠킨스 build error**
+
 `echo "Done"
 FATAL: Unable to produce a script file
 java.nio.charset.UnmappableCharacterException: Input length = 1
@@ -68,12 +70,14 @@ Finished: SUCCESS`
 yml 및 setting 파일의 주석 부분에 UTF-8 한글문자가 있어서 발생한 오류이다. 이는 프로젝트 셋팅을 UTF-8을 명시해줄 수 있는 라인이 필요로 하다.
 
 **AWS 배포 에러 로그**
+
 `SdkClientException: The requested metadata is not found at`
 ` Unable to retrieve the requested metadata (/latest/user-data/)`
 
 yml의 버킷이름과 시크릿 키를 확인해야 한다.
 
 **WebSecurityConfigurerAdapter deprecated**
+
 `[spring security] Error creating bean with name 에러 / 순환 참조 에러`
 
 5.7버전부터 WebSecurityConfigurerAdapter 가 deprecated 되었다. 기존에는 WebSecurityConfigurerAdapter를 extends 해서 메소드를 오버라이딩 하여 구현하였다. 최근 공식문서를 참고해보자.

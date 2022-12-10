@@ -2,7 +2,7 @@
 layout: post
 title: Project gallendar - refactor
 comments: true
-tags: project
+tags: Project
 ---
 
 <h4> Members entity 리팩토링 </h4>

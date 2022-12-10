@@ -2,10 +2,11 @@
 layout: post
 title: Project gallendar - Trouble Shooting
 comments: true
-tags: project
+tags: Project
 ---
 
 <h4>오류 내용</h4>
+
 
 **SMTP ERROR**
 

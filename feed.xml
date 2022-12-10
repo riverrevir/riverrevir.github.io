@@ -5,8 +5,8 @@
     <description></description>
     <link>https://riverrevir.github.io//</link>
     <atom:link href="https://riverrevir.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 10 Dec 2022 07:53:37 +0100</pubDate>
-    <lastBuildDate>Sat, 10 Dec 2022 07:53:37 +0100</lastBuildDate>
+    <pubDate>Sat, 10 Dec 2022 08:16:50 +0100</pubDate>
+    <lastBuildDate>Sat, 10 Dec 2022 08:16:50 +0100</lastBuildDate>
     <generator>Jekyll v4.2.1</generator>
     
       <item>
@@ -116,8 +116,9 @@
         <title>Project gallendar - Trouble Shooting</title>
         <description>&lt;h4&gt;오류 내용&lt;/h4&gt;
 
-&lt;p&gt;&lt;strong&gt;SMTP ERROR&lt;/strong&gt;
-&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Failed message 1: com.sun.mail.smtp.SMTPSendFailedException: 530 5.7.0 Must issue&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;SMTP ERROR&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Failed message 1: com.sun.mail.smtp.SMTPSendFailedException: 530 5.7.0 Must issue&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;gardle의 yml 파일 setting의 오류로써 gradle을 사용하시는 분들은 아래 부분을 참고하여 yml setting을 해주셔야 오류가 나지 않습니다.&lt;/p&gt;
 
@@ -138,8 +139,9 @@
 
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;strong&gt;젠킨스 build error&lt;/strong&gt;
-&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;echo &quot;Done&quot;
+&lt;p&gt;&lt;strong&gt;젠킨스 build error&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;echo &quot;Done&quot;
 FATAL: Unable to produce a script file
 java.nio.charset.UnmappableCharacterException: Input length = 1
 	at java.base/java.nio.charset.CoderResult.throwException(CoderResult.java:275)
@@ -175,14 +177,16 @@ Finished: SUCCESS&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;yml 및 setting 파일의 주석 부분에 UTF-8 한글문자가 있어서 발생한 오류이다. 이는 프로젝트 셋팅을 UTF-8을 명시해줄 수 있는 라인이 필요로 하다.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;AWS 배포 에러 로그&lt;/strong&gt;
-&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SdkClientException: The requested metadata is not found at&lt;/code&gt;
+&lt;p&gt;&lt;strong&gt;AWS 배포 에러 로그&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SdkClientException: The requested metadata is not found at&lt;/code&gt;
 ` Unable to retrieve the requested metadata (/latest/user-data/)`&lt;/p&gt;
 
 &lt;p&gt;yml의 버킷이름과 시크릿 키를 확인해야 한다.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;WebSecurityConfigurerAdapter deprecated&lt;/strong&gt;
-&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;[spring security] Error creating bean with name 에러 / 순환 참조 에러&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;WebSecurityConfigurerAdapter deprecated&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;[spring security] Error creating bean with name 에러 / 순환 참조 에러&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;5.7버전부터 WebSecurityConfigurerAdapter 가 deprecated 되었다. 기존에는 WebSecurityConfigurerAdapter를 extends 해서 메소드를 오버라이딩 하여 구현하였다. 최근 공식문서를 참고해보자.&lt;/p&gt;
 

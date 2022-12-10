@@ -4,7 +4,7 @@
  <title>river.dev</title>
  <link href="https://riverrevir.github.io//atom.xml" rel="self"/>
  <link href="https://riverrevir.github.io//"/>
- <updated>2022-12-09T18:36:05+01:00</updated>
+ <updated>2022-12-10T07:53:37+01:00</updated>
  <id>https://riverrevir.github.io</id>
  <author>
    <name>riverrevir</name>
@@ -108,6 +108,91 @@
 &lt;h4&gt;회고&lt;/h4&gt;
 
 &lt;p&gt;유효한 요청인지에 대한 검증은 클라이언트 측에서도 하겠지만, 백엔드에서도 해야함을 느껴서 검증부분을 추가하였습니다. 또한 응답 개선을 통해 모호한 서버에러를 주는 것 보다 명확한 에러에 대한 정보를 준다면 오류를 찾기도 한층 수월해질 것입니다. 아직 객체지향적에 대한 패턴의 공부를 하지 못하여 제대로 된 리팩토링을 하진 못하였지만, 리팩토링을 하면서 많은 것들에 대한 생각을 할 수 있어서 좋았습니다.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Project gallendar - Trouble Shooting</title>
+   <link href="https://riverrevir.github.io//2022/11/25/project-gallendar02"/>
+   <updated>2022-11-25T00:00:00+01:00</updated>
+   <id>https://riverrevir.github.io/2022/11/25/project_gallendar02</id>
+   <content type="html">&lt;h4&gt;오류 내용&lt;/h4&gt;
+
+&lt;p&gt;&lt;strong&gt;SMTP ERROR&lt;/strong&gt;
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Failed message 1: com.sun.mail.smtp.SMTPSendFailedException: 530 5.7.0 Must issue&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;gardle의 yml 파일 setting의 오류로써 gradle을 사용하시는 분들은 아래 부분을 참고하여 yml setting을 해주셔야 오류가 나지 않습니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;nl&quot;&gt;mail:&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;properties:&lt;/span&gt;
+      &lt;span class=&quot;nl&quot;&gt;mail:&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;smtp:&lt;/span&gt;
+          &lt;span class=&quot;nl&quot;&gt;starttls:&lt;/span&gt;
+            &lt;span class=&quot;nl&quot;&gt;enable:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;
+          &lt;span class=&quot;nl&quot;&gt;auth:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;host:&lt;/span&gt; 
+    &lt;span class=&quot;nl&quot;&gt;username:&lt;/span&gt; 
+    &lt;span class=&quot;nl&quot;&gt;password:&lt;/span&gt; 
+    &lt;span class=&quot;nl&quot;&gt;port:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;587&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;redis:&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;host:&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;127.0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.1&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;port:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6379&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;젠킨스 build error&lt;/strong&gt;
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;echo &quot;Done&quot;
+FATAL: Unable to produce a script file
+java.nio.charset.UnmappableCharacterException: Input length = 1
+	at java.base/java.nio.charset.CoderResult.throwException(CoderResult.java:275)
+	at java.base/sun.nio.cs.StreamEncoder.implWrite(StreamEncoder.java:306)
+	at java.base/sun.nio.cs.StreamEncoder.implWrite(StreamEncoder.java:281)
+	at java.base/sun.nio.cs.StreamEncoder.write(StreamEncoder.java:125)
+	at java.base/java.io.OutputStreamWriter.write(OutputStreamWriter.java:208)
+	at java.base/java.io.BufferedWriter.flushBuffer(BufferedWriter.java:120)
+	at java.base/java.io.BufferedWriter.close(BufferedWriter.java:268)
+	at hudson.FilePath$CreateTextTempFile.invoke(FilePath.java:1652)
+	at hudson.FilePath$CreateTextTempFile.invoke(FilePath.java:1622)
+	at hudson.FilePath.act(FilePath.java:1192)
+	at hudson.FilePath.act(FilePath.java:1175)
+	at hudson.FilePath.createTextTempFile(FilePath.java:1616)
+Caused: java.io.IOException: Failed to create a temp file on /var/lib/jenkins/workspace/gallendar
+	at hudson.FilePath.createTextTempFile(FilePath.java:1618)
+	at hudson.tasks.CommandInterpreter.createScriptFile(CommandInterpreter.java:202)
+	at hudson.tasks.CommandInterpreter.perform(CommandInterpreter.java:120)
+	at hudson.tasks.CommandInterpreter.perform(CommandInterpreter.java:92)
+	at hudson.plugins.postbuildtask.PostbuildTask.perform(PostbuildTask.java:123)
+	at hudson.tasks.BuildStepMonitor$1.perform(BuildStepMonitor.java:20)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.perform(AbstractBuild.java:816)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.performAllBuildSteps(AbstractBuild.java:765)
+	at hudson.model.Build$BuildExecution.post2(Build.java:179)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.post(AbstractBuild.java:709)
+	at hudson.model.Run.execute(Run.java:1924)
+	at hudson.model.FreeStyleBuild.run(FreeStyleBuild.java:44)
+	at hudson.model.ResourceController.execute(ResourceController.java:107)
+	at hudson.model.Executor.run(Executor.java:449)
+POST BUILD TASK : FAILURE
+END OF POST BUILD TASK : 0
+Finished: SUCCESS&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;yml 및 setting 파일의 주석 부분에 UTF-8 한글문자가 있어서 발생한 오류이다. 이는 프로젝트 셋팅을 UTF-8을 명시해줄 수 있는 라인이 필요로 하다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;AWS 배포 에러 로그&lt;/strong&gt;
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SdkClientException: The requested metadata is not found at&lt;/code&gt;
+` Unable to retrieve the requested metadata (/latest/user-data/)`&lt;/p&gt;
+
+&lt;p&gt;yml의 버킷이름과 시크릿 키를 확인해야 한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;WebSecurityConfigurerAdapter deprecated&lt;/strong&gt;
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;[spring security] Error creating bean with name 에러 / 순환 참조 에러&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;5.7버전부터 WebSecurityConfigurerAdapter 가 deprecated 되었다. 기존에는 WebSecurityConfigurerAdapter를 extends 해서 메소드를 오버라이딩 하여 구현하였다. 최근 공식문서를 참고해보자.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Deprecated.
+Use a SecurityFilterChain Bean to configure HttpSecurity or a WebSecurityCustomizer Bean to configure WebSecurity
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;간단하게 보면 SecurityFilterChain을 Bean으로 등록해서 사용하라는 메시지를 남겨주고 있습니다. &lt;a href=&quot;https://spring.io/blog/2022/02/21/spring-security-without-the-websecurityconfigureradapter&quot;&gt;공식문서&lt;/a&gt; 에 의하여 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;@Bean
+public SecurityFilterChain configure(HttpSecurity http) throws Exception&lt;/code&gt; 이런식으로 Bean으로 등록하여 최신 Security에 맞춰 사용하면 오류를 제거할 수 있다.&lt;/p&gt;
 </content>
  </entry>
  

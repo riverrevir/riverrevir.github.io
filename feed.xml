@@ -5,8 +5,8 @@
     <description></description>
     <link>https://riverrevir.github.io//</link>
     <atom:link href="https://riverrevir.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 10 Dec 2022 08:16:50 +0100</pubDate>
-    <lastBuildDate>Sat, 10 Dec 2022 08:16:50 +0100</lastBuildDate>
+    <pubDate>Sat, 10 Dec 2022 08:18:39 +0100</pubDate>
+    <lastBuildDate>Sat, 10 Dec 2022 08:18:39 +0100</lastBuildDate>
     <generator>Jekyll v4.2.1</generator>
     
       <item>
@@ -107,7 +107,7 @@
         <link>https://riverrevir.github.io//2022/12/08/project-gallendar03</link>
         <guid isPermaLink="true">https://riverrevir.github.io//2022/12/08/project-gallendar03</guid>
         
-        <category>project</category>
+        <category>Project</category>
         
         
       </item>
@@ -200,7 +200,7 @@ public SecurityFilterChain configure(HttpSecurity http) throws Exception&lt;/cod
         <link>https://riverrevir.github.io//2022/11/25/project-gallendar02</link>
         <guid isPermaLink="true">https://riverrevir.github.io//2022/11/25/project-gallendar02</guid>
         
-        <category>project</category>
+        <category>Project</category>
         
         
       </item>
@@ -253,7 +253,7 @@ public SecurityFilterChain configure(HttpSecurity http) throws Exception&lt;/cod
         <link>https://riverrevir.github.io//2022/11/25/project-gallendar01</link>
         <guid isPermaLink="true">https://riverrevir.github.io//2022/11/25/project-gallendar01</guid>
         
-        <category>project</category>
+        <category>Project</category>
         
         
       </item>

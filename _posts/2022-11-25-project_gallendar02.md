@@ -89,3 +89,29 @@ Use a SecurityFilterChain Bean to configure HttpSecurity or a WebSecurityCustomi
 ````
 간단하게 보면 SecurityFilterChain을 Bean으로 등록해서 사용하라는 메시지를 남겨주고 있습니다. [공식문서](https://spring.io/blog/2022/02/21/spring-security-without-the-websecurityconfigureradapter) 에 의하여 `@Bean
 public SecurityFilterChain configure(HttpSecurity http) throws Exception` 이런식으로 Bean으로 등록하여 최신 Security에 맞춰 사용하면 오류를 제거할 수 있다.
+
+
+**`MethodArgumentNotValidException` 모호성**
+
+컨트롤러에서 `@Valid`를 사용하여 request의 유효성을 검사하는 부분에서의 예외처리를 `@RestControllerAdvice`을 사용하여 예외를 처리하려 하였습니다. 하지만 `BeanCreationException` 예외를 발생시키고 있습니다. 
+
+```
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'handlerExceptionResolver' defined in class path resource
+```
+
+이유는 `@ExceptionHandler`에 `MethodArgumentNotValidException`이 구현되어 있어서 해당 예외를 따로 GlobalExceptionHandler에서 동일한 예외 처리를 하게 되면, Ambiguous(모호성) 문제가 발생한다고 합니다.
+즉 GlobalExceptionHandler에서의 예외를 어떤 식으로 사용해야 할 지 찾아봐야 했습니다.
+
+`@ExceptionHandler`를 직접 사용하는 대신 해당 핸들러를 직접 오버라이드해서 사용하는게 핵심입니다.
+
+```java
+@Override
+    protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex, HttpHeaders headers, HttpStatus status, WebRequest request) {
+        log.error("handleValidException throw Exception : {}", ErrorCode.INVALID_INPUT_VALUE);
+        ErrorCode errorCode = ErrorCode.INVALID_INPUT_VALUE;
+        return ResponseEntity.status(errorCode.getHttpStatus())
+                .body(errorCode);
+    }
+```
+
+
